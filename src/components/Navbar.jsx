@@ -90,7 +90,7 @@ export default function Navbar() {
 
             <Link
               to="/admissions"
-              className="px-6 py-2.5 text-sm font-bold tracking-wide text-primary transition-all duration-300 rounded-full bg-gold hover:scale-105 hover:shadow-xl hover:shadow-gold/30 active:scale-95"
+              className="hidden sm:block px-6 py-2.5 text-sm font-bold tracking-wide text-primary transition-all duration-300 rounded-full bg-gold hover:scale-105 hover:shadow-xl hover:shadow-gold/30 active:scale-95"
             >
               Apply Now
             </Link>
@@ -128,55 +128,62 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* ── Mobile Drawer Overlay ── */}
+      {/* ── Mobile Full-Screen Menu Overlay ── */}
       <div
-        className={`fixed inset-0 z-[99] lg:hidden transition-all duration-500 ${
+        className={`fixed inset-0 z-[999] lg:hidden transition-all duration-500 ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-primary/70 backdrop-blur-sm"
+          className="absolute inset-0 bg-primary/30 backdrop-blur-md"
           onClick={() => setMenuOpen(false)}
         />
 
-        {/* Slide-in Drawer */}
+        {/* Full Screen Menu Container */}
         <div
-          className={`absolute top-0 right-0 h-full w-72 bg-white shadow-2xl transition-transform duration-500 ${
-            menuOpen ? "translate-x-0" : "translate-x-full"
+          className={`absolute inset-0 w-full h-full bg-white transition-transform duration-700 ease-[0.22,1,0.36,1] flex flex-col ${
+            menuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <div className="flex flex-col h-full p-8">
-            {/* Drawer header */}
-            <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col h-full p-6 sm:p-8">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-12">
               <Link
                 to="/"
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
                 onClick={() => setMenuOpen(false)}
               >
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary">
-                  <span className="text-sm font-black text-gold">SM</span>
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary shadow-lg shadow-primary/20">
+                  <span className="text-lg font-black text-gold">SM</span>
                 </div>
-                <span className="text-xl font-black text-primary font-heading">Academy</span>
+                <span className="text-2xl font-black text-primary font-heading">Academy</span>
               </Link>
-              <button onClick={() => setMenuOpen(false)} className="p-2 text-primary hover:bg-surface rounded-lg transition-colors">
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="p-3 text-primary bg-surface-container-low hover:bg-surface-container rounded-full transition-colors"
+              >
                 <HiX className="text-2xl" />
               </button>
             </div>
 
-            {/* Drawer links */}
-            <nav className="flex flex-col gap-1">
+            {/* Links with staggered animation */}
+            <nav className="flex flex-col gap-4 overflow-y-auto pb-6">
               {navLinks.map((link, i) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
-                  style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
+                  style={{
+                    transitionDelay: menuOpen ? `${100 + i * 100}ms` : "0ms",
+                  }}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-4 py-3.5 rounded-xl font-medium transition-all duration-200 ${
+                    `flex items-center justify-between px-6 py-5 rounded-2xl font-heading text-xl md:text-2xl transition-all duration-500 transform ${
+                      menuOpen ? "translate-y-0 opacity-100 scale-100" : "translate-y-12 opacity-0 scale-95"
+                    } ${
                       isActive
-                        ? "bg-primary text-white font-bold"
-                        : "text-on-surface-variant hover:bg-surface-container-low hover:text-primary"
+                        ? "bg-primary text-white font-bold shadow-xl shadow-primary/20"
+                        : "bg-surface-container-low text-primary hover:bg-gold hover:shadow-lg font-medium"
                     }`
                   }
                 >
@@ -184,7 +191,7 @@ export default function Navbar() {
                     <>
                       <span>{link.label}</span>
                       {isActive && (
-                        <span className="w-2 h-2 rounded-full bg-gold" />
+                        <span className="w-3 h-3 rounded-full bg-gold animate-pulse" />
                       )}
                     </>
                   )}
@@ -192,15 +199,18 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Drawer footer CTA */}
-            <div className="mt-auto space-y-3">
-              <p className="text-xs text-on-surface-variant text-center">
-                Admissions open for 2026
+            {/* Footer CTA */}
+            <div className="mt-auto pt-6 border-t border-outline/10">
+              <p className="text-sm font-medium text-on-surface-variant text-center mb-4">
+                Admissions open for 2026 Academic Year
               </p>
               <Link
                 to="/admissions"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full py-4 text-sm font-black text-center text-primary rounded-2xl bg-gold hover:brightness-105 transition-all shadow-lg shadow-gold/20"
+                style={{ transitionDelay: menuOpen ? "600ms" : "0ms" }}
+                className={`block w-full py-5 text-lg font-black text-center text-primary rounded-2xl bg-gold hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 shadow-xl shadow-gold/30 ${
+                  menuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                }`}
               >
                 Apply Now →
               </Link>

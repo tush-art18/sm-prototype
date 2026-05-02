@@ -221,9 +221,9 @@ export default function Home() {
                       />
                     </div>
                     <div
-                      className={`absolute -bottom-6 ${
-                        i % 2 === 0 ? "-right-6" : "-left-6"
-                      } w-32 h-32 bg-gold text-primary flex items-center justify-center rounded-[2rem] font-black text-2xl shadow-2xl transition-transform duration-300 group-hover:scale-110`}
+                      className={`absolute -bottom-4 md:-bottom-6 ${
+                        i % 2 === 0 ? "-right-4 md:-right-6" : "-left-4 md:-left-6"
+                      } w-24 h-24 md:w-32 md:h-32 bg-gold text-primary flex items-center justify-center rounded-2xl md:rounded-[2rem] font-black text-xl md:text-2xl shadow-2xl transition-transform duration-300 group-hover:scale-110`}
                     >
                       {stream.code}
                     </div>
@@ -367,7 +367,7 @@ export default function Home() {
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection>
-            <div className="bg-primary rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
+            <div className="bg-primary rounded-[3rem] p-8 md:p-20 relative overflow-hidden">
               {/* Decorative shapes */}
               <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
                 <svg viewBox="0 0 100 100" className="w-full h-full">

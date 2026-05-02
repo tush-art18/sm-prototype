@@ -103,6 +103,16 @@
   transition: opacity 0.2s;
 }
 
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+}
+
 /* Blob/shape animations */
 .blob {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;

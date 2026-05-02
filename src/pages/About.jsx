@@ -220,7 +220,7 @@ export default function About() {
 
       {/* ─── STATS BANNER ─────────────────────────────────── */}
       <section className="px-6 py-20 bg-primary">
-        <div className="flex flex-wrap justify-center gap-16 mx-auto text-center max-w-7xl">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mx-auto text-center max-w-7xl">
           {aboutStats.map((s, i) => (
             <AboutStat key={i} value={s.value} label={s.label} index={i} />
           ))}
