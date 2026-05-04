@@ -62,15 +62,15 @@ export default function Faculty() {
           >
             Our Academic Team
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="max-w-2xl text-lg text-white/70 leading-relaxed"
-          >
-            Led by visionary educators and subject matter experts, our faculty is dedicated to
-            nurturing excellence and fostering a lifelong love for learning in every student.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="max-w-2xl text-lg text-white/70 leading-relaxed"
+            >
+              Dedicated to nurturing excellence, our faculty provides result-oriented teaching 
+              and personal attention to help students achieve their goals.
+            </motion.p>
         </div>
       </header>
 
@@ -101,10 +101,13 @@ export default function Faculty() {
               <p className="leading-relaxed text-on-surface-variant text-lg">
                 {principal.bio}
               </p>
-              <div className="flex items-center gap-3 text-primary font-bold">
-                <HiAcademicCap className="text-2xl" />
-                <span>{principal.qualification}</span>
-              </div>
+              
+              {principal.qualification && (
+                <div className="flex items-center gap-3 text-primary font-bold">
+                  <HiAcademicCap className="text-2xl" />
+                  <span>{principal.qualification}</span>
+                </div>
+              )}
 
               {/* Quote bubble */}
               <div className="mt-4 p-6 rounded-2xl bg-surface-container-low border-l-4 border-gold italic text-on-surface-variant leading-relaxed">

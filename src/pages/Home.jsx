@@ -16,7 +16,8 @@ import { FaWhatsapp } from "react-icons/fa";
 // Stat counter card
 function StatCard({ value, label, index }) {
   const { ref, isVisible } = useScrollAnimation(0.3);
-  const displayed = useCountUp(value, 2000, isVisible);
+  const isNumeric = !isNaN(parseFloat(value));
+  const displayed = useCountUp(isNumeric ? value : "0", 2000, isVisible);
   return (
     <motion.div
       ref={ref}
@@ -26,7 +27,7 @@ function StatCard({ value, label, index }) {
       className="p-6 transition-all duration-300 border bg-white/5 backdrop-blur-lg border-white/10 rounded-2xl hover:bg-white/10 hover:scale-105 group"
     >
       <span className="block mb-1 text-3xl font-black text-gold group-hover:scale-110 transition-transform inline-block">
-        {isVisible ? displayed : "0"}
+        {isNumeric ? (isVisible ? displayed : "0") : value}
       </span>
       <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{label}</span>
     </motion.div>
@@ -64,8 +65,8 @@ export default function Home() {
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80"
-            alt="University campus"
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80"
+            alt="University campus building"
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 hero-overlay" />
@@ -107,12 +108,12 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-white font-heading font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] drop-shadow-2xl"
             >
-              Inspiring Minds,{" "}
+              The Right Place,{" "}
               <br />
-              <span className="text-gold">Igniting Change</span>
+              <span className="text-gold">To Shape Your Future</span>
               <br />
               <span className="block mt-3 text-3xl md:text-5xl opacity-80 font-bold">
-                at SM Academy
+                at SM Junior College & Academy
               </span>
             </motion.h1>
 
@@ -123,20 +124,19 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="glass p-8 md:p-10 rounded-[2.5rem] w-full max-w-2xl shadow-2xl"
             >
-              <p className="mb-8 text-lg leading-relaxed text-white/90 md:text-xl">
-                We are committed to transformative education through groundbreaking research
-                and a dedication to global excellence. Join a legacy of leaders.
+              <p className="mb-8 text-lg leading-relaxed text-white/90 md:text-xl font-bold">
+                FREE ADMISSION TO STUDENTS ABOVE 90% IN SSC.
+              </p>
+              <p className="mb-8 text-sm leading-relaxed text-white/80">
+                A thoughtful initiative of Saint Mesum Education Society.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/courses" className="btn-gold flex items-center gap-2">
                   Explore Programs <HiArrowRight />
                 </Link>
-                <button
-                  onClick={() => setVideoOpen(true)}
-                  className="btn-outline flex items-center gap-2"
-                >
-                  ▶ Watch Film
-                </button>
+                <Link to="/admissions" className="btn-outline flex items-center gap-2">
+                  Limited Seats - Apply Now
+                </Link>
               </div>
             </motion.div>
 
@@ -160,12 +160,12 @@ export default function Home() {
             <div className="max-w-3xl">
               <span className="section-label">The SM Advantage</span>
               <h2 className="font-heading font-bold text-primary text-4xl md:text-6xl leading-[1.1]">
-                Where Tradition Meets{" "}
-                <span className="text-primary/20">Modernity</span>
+                Knowledge is the root{" "}
+                <span className="text-primary/20">of all good</span>
               </h2>
             </div>
             <p className="max-w-sm text-lg text-on-surface-variant">
-              We bridge the gap between foundational knowledge and futuristic application.
+              Impressive infrastructure, dedicated faculty, and result-oriented teaching.
             </p>
           </AnimatedSection>
 
@@ -265,10 +265,10 @@ export default function Home() {
         <div className="px-6 mx-auto max-w-7xl">
           <AnimatedSection className="mb-20 text-center">
             <h2 className="mb-4 text-4xl font-heading font-bold text-primary md:text-6xl">
-              Life Unfiltered
+              Campus Life
             </h2>
             <p className="text-lg text-on-surface-variant">
-              Beyond the classroom, we build memories that define a lifetime.
+              Safe disciplined campus ensuring holistic growth.
             </p>
           </AnimatedSection>
 
@@ -432,39 +432,6 @@ export default function Home() {
           <FaWhatsapp className="text-white text-3xl relative z-10" />
         </a>
       </motion.div>
-
-      {/* ─── VIDEO MODAL ─────────────────────────────────── */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-          onClick={() => setVideoOpen(false)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="relative w-full max-w-4xl aspect-video rounded-3xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close button */}
-            <button
-              onClick={() => setVideoOpen(false)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-            >
-              <HiX className="text-xl" />
-            </button>
-            {/* YouTube college tour video */}
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/p-PBnGBBvf4?autoplay=1&rel=0&modestbranding=1"
-              title="College Campus Tour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </motion.div>
-        </div>
-      )}
     </main>
   );
 }

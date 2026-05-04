@@ -238,20 +238,17 @@ export default function Admissions() {
               </div>
             </AnimatedSection>
 
-            {/* Map placeholder */}
+            {/* Interactive Map */}
             <AnimatedSection animation="fade-right" delay={200}>
-              <div className="relative h-52 overflow-hidden rounded-3xl border border-outline-variant group cursor-pointer">
-                <img
-                  src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80"
-                  alt="Hyderabad Map"
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-primary/30 group-hover:bg-primary/50 transition-colors duration-300">
-                  <div className="p-4 text-center rounded-2xl shadow-xl bg-white/95 backdrop-blur-sm text-primary">
-                    <span className="block mb-1 text-3xl">🗺️</span>
-                    <span className="font-bold text-sm">View Interactive Map</span>
-                  </div>
-                </div>
+              <div className="relative h-64 overflow-hidden rounded-3xl border border-outline-variant shadow-lg bg-surface-container-lowest">
+                <iframe
+                  title="Campus Location"
+                  className="w-full h-full border-0"
+                  src="https://maps.google.com/maps?q=LIGHT+HOUSE,+Balshetty+Kheth,+Hyderabad&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </AnimatedSection>
 

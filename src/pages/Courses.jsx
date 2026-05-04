@@ -127,7 +127,7 @@ export default function Courses() {
                 <span className="mb-4 text-4xl">🎓</span>
                 <h3 className="mb-2 font-heading font-bold text-xl">Highly Efficient Faculty</h3>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  Learn from PhD holders and veteran educators with decades of competitive teaching experience.
+                  Learn from highly qualified educators with extensive competitive teaching experience and a passion for student success.
                 </p>
               </div>
             </AnimatedSection>
@@ -143,8 +143,8 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* MPC & CEC */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Other Courses */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {courses.slice(1).map((course, i) => (
             <CourseCard key={course.id} course={course} index={i + 1} />
           ))}
