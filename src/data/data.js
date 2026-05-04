@@ -203,14 +203,14 @@ export const coachingFeatures = [
     icon: "📚",
   },
   {
-    title: "Personal Attention",
-    description: "Limited seats ensure every student receives the motivation and mentorship needed to tap their potential.",
-    icon: "👥",
-  },
-  {
     title: "Result Oriented",
     description: "Weekly exams, Daily Practice Papers (DPP), and Mock Tests to ensure best results.",
     icon: "📈",
+  },
+  {
+    title: "Personal Attention",
+    description: "Limited seats ensure every student receives the motivation and mentorship needed to tap their potential.",
+    icon: "👥",
   },
 ];
 
