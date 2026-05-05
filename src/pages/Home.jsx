@@ -100,7 +100,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-white font-heading font-black text-5xl md:text-7xl lg:text-8xl leading-[1.05] drop-shadow-2xl"
+              className="text-white font-heading font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-[1.05] drop-shadow-2xl"
             >
               The Right Place,{" "}
               <br />
@@ -116,7 +116,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="glass p-8 md:p-10 rounded-[2.5rem] w-full max-w-2xl shadow-2xl"
+              className="glass p-6 sm:p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] w-full max-w-2xl shadow-2xl"
             >
               <p className="mb-8 text-lg font-bold leading-relaxed text-white/90 md:text-xl">
                 FREE ADMISSION IN INTERMEDIATE FOR MERIT STUDENTS.
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {coreValues.map((val, i) => (
               <AnimatedSection key={i} delay={i * 100} animation="fade-up">
-                <div className="group p-10 rounded-[2.5rem] bg-surface-container-low hover:bg-primary transition-all duration-500 border border-transparent hover:border-white/10 cursor-pointer h-full">
+                <div className="group p-8 sm:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-surface-container-low hover:bg-primary transition-all duration-500 border border-transparent hover:border-white/10 cursor-pointer h-full">
                   <div className="flex items-center justify-center mb-8 text-2xl transition-transform duration-300 bg-white shadow-lg w-14 h-14 rounded-2xl group-hover:scale-110">
                     {val.icon}
                   </div>
@@ -212,7 +212,7 @@ export default function Home() {
                 >
                   {/* Image */}
                   <div className="relative lg:w-1/2">
-                    <div className="aspect-[16/9] rounded-[3rem] overflow-hidden border border-white/10 group-hover:border-gold/50 transition-colors shadow-2xl">
+                    <div className="aspect-[16/9] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 group-hover:border-gold/50 transition-colors shadow-2xl">
                       <img
                         src={stream.image}
                         alt={stream.title}
@@ -275,7 +275,7 @@ export default function Home() {
             {bentoImages.map((item, i) => (
               <div
                 key={item.key}
-                className={`${item.key} group relative overflow-hidden rounded-[3rem] shadow-xl`}
+                className={`${item.key} group relative overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-xl`}
               >
                 <img
                   src={item.image}
@@ -302,7 +302,7 @@ export default function Home() {
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl">
           <AnimatedSection>
-            <div className="bg-primary rounded-[3rem] p-8 md:p-20 relative overflow-hidden">
+            <div className="bg-primary rounded-[2rem] md:rounded-[3rem] p-6 sm:p-10 md:p-20 relative overflow-hidden">
               {/* Decorative shapes */}
               <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-5">
                 <svg viewBox="0 0 100 100" className="w-full h-full">

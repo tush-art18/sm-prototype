@@ -55,7 +55,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mb-6 font-heading font-black text-4xl md:text-6xl leading-[1.1]"
+              className="mb-6 font-heading font-black text-3xl sm:text-4xl md:text-6xl leading-tight md:leading-[1.1]"
             >
               A Legacy of 42 Years in Education
             </motion.h1>
@@ -77,7 +77,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="items-center justify-center hidden md:flex lg:justify-end"
           >
-            <div className="w-full max-w-[360px] lg:max-w-[400px] overflow-hidden border-4 shadow-2xl border-white/20 aspect-[3/4] rounded-3xl">
+            <div className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] overflow-hidden border-4 shadow-2xl border-white/20 aspect-[3/4] rounded-[2rem] md:rounded-3xl">
               <img
                 className="object-cover w-full h-full"
                 src="/infrastructure-02.jpeg"
@@ -92,7 +92,7 @@ export default function About() {
       <section className="px-6 py-24 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <AnimatedSection animation="fade-left" className="md:col-span-2">
-            <div className="flex flex-col justify-between h-full p-10 transition-shadow bg-white border shadow-sm border-outline-variant rounded-3xl hover:shadow-lg">
+            <div className="flex flex-col justify-between h-full p-6 sm:p-10 transition-shadow bg-white border shadow-sm border-outline-variant rounded-[2rem] md:rounded-3xl hover:shadow-lg">
               <div>
                 <span className="block mb-4 text-xs font-bold tracking-widest uppercase text-primary">
                   Our Foundation
@@ -115,7 +115,7 @@ export default function About() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-right">
-            <div className="h-full p-10 text-white transition-shadow duration-300 border shadow-lg bg-primary-container rounded-3xl hover:shadow-2xl hover:-translate-y-1">
+            <div className="h-full p-6 sm:p-10 text-white transition-shadow duration-300 border shadow-lg bg-primary-container rounded-[2rem] md:rounded-3xl hover:shadow-2xl hover:-translate-y-1">
               <div className="mb-6">
                 <span className="text-5xl">🎓</span>
               </div>
@@ -136,7 +136,7 @@ export default function About() {
       <section className="px-6 py-24 bg-surface-container-low">
         <div className="grid items-center gap-12 mx-auto max-w-7xl md:grid-cols-5">
           <AnimatedSection animation="fade-left" className="md:col-span-2">
-            <div className="aspect-[4/5] bg-white rounded-3xl overflow-hidden border-8 border-white shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+            <div className="aspect-[4/5] bg-white rounded-[2rem] md:rounded-3xl overflow-hidden border-8 border-white shadow-2xl rotate-0 md:rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
               <img
                 className="object-cover w-full h-full"
                 src={principal.image}
@@ -179,7 +179,7 @@ export default function About() {
           
           <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
             <AnimatedSection animation="fade-left">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+              <div className="aspect-[4/3] rounded-[2rem] md:rounded-3xl overflow-hidden shadow-xl">
                 <img
                   src="/image-05.jpeg"
                   alt="Classroom insight"
@@ -248,7 +248,7 @@ export default function About() {
                     }`}
                   >
                     <div className={`flex-1 ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                      <div className="p-6 transition-shadow duration-300 bg-white border shadow-md rounded-2xl hover:shadow-xl border-outline-variant/50 hover:-translate-y-1">
+                      <div className="p-6 transition-shadow duration-300 bg-white border shadow-md rounded-[1.5rem] md:rounded-2xl hover:shadow-xl border-outline-variant/50 hover:-translate-y-1">
                         <h4 className="mb-2 text-xl font-bold font-heading text-primary">
                           {event.title}
                         </h4>

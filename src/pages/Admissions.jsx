@@ -63,7 +63,7 @@ export default function Admissions() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-8 font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white leading-[1] tracking-tight"
+            className="mb-8 font-heading font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white leading-tight md:leading-[1] tracking-tight"
           >
             Shape Your <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">Future Today.</span>
@@ -94,14 +94,6 @@ export default function Admissions() {
             >
               Start Application <HiArrowRight />
             </a>
-            <a
-              href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20request%20the%20latest%20brochure%20for%20SM%20Academy.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 text-white font-bold rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
-            >
-              Download Brochure
-            </a>
           </motion.div>
         </div>
       </section>
@@ -110,11 +102,11 @@ export default function Admissions() {
       <section className="relative z-20 px-6 py-12 -mt-20">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection animation="fade-up">
-            <div className="group relative overflow-hidden bg-primary rounded-[3rem] p-1 md:p-1.5 shadow-2xl transition-all duration-500 hover:shadow-gold/10 hover:shadow-[0_0_50px_rgba(252,212,0,0.15)]">
+            <div className="group relative overflow-hidden bg-primary rounded-[2rem] md:rounded-[3rem] p-1 md:p-1.5 shadow-2xl transition-all duration-500 hover:shadow-gold/10 hover:shadow-[0_0_50px_rgba(252,212,0,0.15)]">
               {/* Inner Gradient Border Effect */}
               <div className="absolute inset-0 opacity-50 bg-gradient-to-r from-gold/40 via-yellow-200/20 to-gold/40" />
               
-              <div className="relative z-10 bg-primary/90 backdrop-blur-xl rounded-[2.8rem] p-8 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
+              <div className="relative z-10 bg-primary/90 backdrop-blur-xl rounded-[1.8rem] md:rounded-[2.8rem] p-8 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
                 {/* Decorative Pattern */}
                 <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none opacity-10">
                   <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -135,7 +127,7 @@ export default function Admissions() {
                   >
                     Exclusive Opportunity
                   </motion.div>
-                  <h2 className="text-3xl md:text-5xl font-black font-heading text-white mb-6 leading-[1.1]">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-black font-heading text-white mb-6 leading-tight md:leading-[1.1]">
                     Merit-Based <span className="text-gold">Free Admission</span>
                   </h2>
                   <p className="text-lg font-light leading-relaxed text-white/60 md:text-xl">
@@ -176,7 +168,7 @@ export default function Admissions() {
         <div className="grid gap-8 md:grid-cols-3">
           {steps.map((step, i) => (
             <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
-              <div className="h-full p-8 transition-all duration-300 bg-white border border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2">
+              <div className="h-full p-6 sm:p-8 transition-all duration-300 bg-white border border-outline-variant rounded-[2rem] md:rounded-3xl hover:shadow-xl hover:-translate-y-2">
                 <div className="flex items-center justify-center w-16 h-16 mb-6 text-3xl rounded-2xl bg-primary-container text-primary">
                   {step.icon}
                 </div>
@@ -202,7 +194,7 @@ export default function Admissions() {
                 <span className="block mb-2 text-sm font-bold tracking-widest uppercase text-gold">
                   Get in Touch
                 </span>
-                <h2 className="mb-6 text-4xl font-black leading-tight md:text-6xl font-heading text-primary">
+                <h2 className="mb-6 text-3xl font-black leading-tight sm:text-4xl md:text-6xl font-heading text-primary">
                   We're Here to Help You Succeed.
                 </h2>
                 <p className="mb-10 text-lg text-on-surface-variant">
@@ -212,7 +204,7 @@ export default function Admissions() {
 
               <div className="grid gap-6 sm:grid-cols-2">
                 <AnimatedSection delay={100} animation="fade-right">
-                  <div className="h-full p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                  <div className="h-full p-6 bg-white border shadow-sm rounded-[1.5rem] md:rounded-3xl border-outline-variant">
                     <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl bg-primary/5 rounded-xl text-primary">
                       <HiPhone />
                     </div>
@@ -232,7 +224,7 @@ export default function Admissions() {
                 </AnimatedSection>
 
                 <AnimatedSection delay={200} animation="fade-right">
-                  <div className="h-full p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                  <div className="h-full p-6 bg-white border shadow-sm rounded-[1.5rem] md:rounded-3xl border-outline-variant">
                     <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl text-green-600 bg-green-500/10 rounded-xl">
                       <FaWhatsapp />
                     </div>
@@ -250,7 +242,7 @@ export default function Admissions() {
               </div>
 
               <AnimatedSection delay={300} animation="fade-up">
-                <div className="flex items-center gap-6 p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                <div className="flex items-center gap-6 p-6 bg-white border shadow-sm rounded-[1.5rem] md:rounded-3xl border-outline-variant">
                   <div className="flex items-center justify-center w-12 h-12 text-2xl bg-gold/20 rounded-xl text-gold shrink-0">
                     <HiMail />
                   </div>
@@ -269,7 +261,7 @@ export default function Admissions() {
 
             {/* Map & Location */}
             <AnimatedSection animation="fade-left" delay={200}>
-              <div className="bg-primary p-2 md:p-4 rounded-[2.5rem] shadow-2xl relative">
+              <div className="bg-primary p-2 md:p-4 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl relative">
                 <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-[2rem]">
                   <iframe
                     title="Campus Location"
@@ -311,7 +303,7 @@ export default function Admissions() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             {admissionFastTrack.map((item, i) => (
               <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
-                <div className="flex flex-col items-center justify-center h-full p-8 text-center transition-all duration-300 border cursor-pointer bg-surface-container-lowest border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2 group">
+                <div className="flex flex-col items-center justify-center h-full p-6 sm:p-8 text-center transition-all duration-300 border cursor-pointer bg-surface-container-lowest border-outline-variant rounded-[2rem] md:rounded-3xl hover:shadow-xl hover:-translate-y-2 group">
                   <div className="mb-6 text-5xl transition-transform duration-300 group-hover:scale-110">
                     {item.icon}
                   </div>

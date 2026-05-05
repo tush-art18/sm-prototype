@@ -13,7 +13,7 @@ function CourseCard({ course, index }) {
       className="h-full"
     >
       <div
-        className="group relative flex flex-col md:flex-row p-6 md:p-8 h-full bg-white border border-outline-variant rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden"
+        className="group relative flex flex-col md:flex-row p-6 md:p-8 h-full bg-white border border-outline-variant rounded-[2rem] md:rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden"
       >
         {/* Decorative background shape */}
         <div className="absolute w-40 h-40 transition-transform duration-700 rounded-full pointer-events-none -top-8 -left-8 bg-surface-container-low group-hover:scale-150" />
@@ -61,7 +61,7 @@ function CourseCard({ course, index }) {
 
         {/* Image side */}
         <div className="w-full md:w-2/5 shrink-0 relative flex flex-col justify-center">
-          <div className="w-full h-48 md:h-full md:min-h-[300px] rounded-2xl overflow-hidden shadow-inner">
+          <div className="w-full h-48 md:h-full md:min-h-[300px] rounded-2xl md:rounded-3xl overflow-hidden shadow-inner">
             <img src={course.image} alt={course.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Courses() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 font-heading font-black text-4xl md:text-6xl text-white leading-[1.1]"
+            className="mb-4 font-heading font-black text-3xl sm:text-4xl md:text-6xl text-white leading-tight md:leading-[1.1]"
           >
             Academic Excellence
             <br />
@@ -126,7 +126,7 @@ export default function Courses() {
           {/* Bottom Left: Side info cards stacked */}
           <div className="flex flex-col gap-8 h-full">
             <AnimatedSection animation="fade-right" delay={200} className="flex-1">
-              <div className="flex flex-col justify-center h-full p-8 text-white transition-all duration-300 shadow-lg rounded-3xl bg-primary-container hover:-translate-y-1">
+              <div className="flex flex-col justify-center h-full p-8 text-white transition-all duration-300 shadow-lg rounded-[2rem] md:rounded-3xl bg-primary-container hover:-translate-y-1">
                 <span className="mb-4 text-4xl">🎓</span>
                 <h3 className="mb-2 text-xl font-bold font-heading">Highly Efficient Faculty</h3>
                 <p className="text-sm leading-relaxed text-white/70">
@@ -135,7 +135,7 @@ export default function Courses() {
               </div>
             </AnimatedSection>
             <AnimatedSection animation="fade-right" delay={300} className="flex-1">
-              <div className="h-full p-8 transition-all duration-300 shadow-lg flex flex-col justify-center rounded-3xl bg-gold hover:-translate-y-1">
+              <div className="h-full p-8 transition-all duration-300 shadow-lg flex flex-col justify-center rounded-[2rem] md:rounded-3xl bg-gold hover:-translate-y-1">
                 <span className="block mb-4 text-4xl">💰</span>
                 <h3 className="mb-2 text-xl font-bold font-heading text-primary">Affordable Fee</h3>
                 <p className="text-sm leading-relaxed text-primary/70">
@@ -164,13 +164,13 @@ export default function Courses() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={200} className="max-w-4xl mx-auto">
-            <div className="p-10 md:p-16 bg-white border border-outline-variant rounded-[3rem] shadow-xl text-center relative overflow-hidden">
+            <div className="p-8 sm:p-10 md:p-16 bg-white border border-outline-variant rounded-[2rem] md:rounded-[3rem] shadow-xl text-center relative overflow-hidden">
               {/* Decorative accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-tr-full pointer-events-none" />
               
               <div className="relative z-10">
-                <p className="text-xl md:text-2xl leading-relaxed text-on-surface-variant font-medium">
+                <p className="text-lg md:text-2xl leading-relaxed text-on-surface-variant font-medium">
                   Exclusive coaching for <span className="text-primary font-bold">NEET students</span>. 
                   Our signature 2-year program ensures students are not just exam-ready, but future-ready. 
                   It definitely helps them to <span className="text-gold font-bold">improve scores</span> and achieve their medical aspirations.
@@ -185,7 +185,7 @@ export default function Courses() {
       {/* ─── CTA CARD ─────────────────────────────────────── */}
       <section className="px-6 py-24 mx-auto max-w-7xl">
         <AnimatedSection>
-          <div className="relative overflow-hidden bg-primary rounded-3xl">
+          <div className="relative overflow-hidden bg-primary rounded-[2rem] md:rounded-3xl">
             <div className="absolute inset-0 z-0">
               <img
                 className="object-cover w-full h-full opacity-10"
@@ -194,7 +194,7 @@ export default function Courses() {
               />
             </div>
             <div className="relative z-10 max-w-3xl px-8 py-16 mx-auto text-center md:p-20">
-              <h2 className="mb-6 text-4xl font-black text-white font-heading md:text-5xl">
+              <h2 className="mb-6 text-3xl sm:text-4xl font-black text-white font-heading md:text-5xl">
                 Ready to start your journey?
               </h2>
               <p className="mb-10 text-lg text-white/70">
