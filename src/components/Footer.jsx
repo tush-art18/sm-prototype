@@ -27,7 +27,7 @@ export default function Footer() {
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href={href}
+                  href={label === "WhatsApp" ? `${href}?text=Hi!%20I'm%20visiting%20the%20SM%20Academy%20website%20and%20have%20a%20few%20questions.` : href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}

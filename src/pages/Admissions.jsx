@@ -30,70 +30,134 @@ export default function Admissions() {
   return (
     <main className="pt-20">
       {/* ─── HERO ─────────────────────────────────────────── */}
-      <section className="relative bg-primary px-6 py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="absolute -right-20 top-0 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
+      <section className="relative min-h-[70vh] flex items-center px-6 py-32 overflow-hidden">
+        {/* Background Image & Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1740&auto=format&fit=crop"
+            alt="Students on campus"
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-surface" />
+        </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl text-center">
-          <motion.span
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 mb-6 rounded-full bg-gold/20 text-gold border border-gold/30 text-xs font-bold uppercase tracking-widest"
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/40 rounded-full blur-[150px] translate-x-1/2 translate-y-1/2" />
+        </div>
+
+        <div className="relative z-10 mx-auto text-center max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gold text-xs font-bold uppercase tracking-[0.2em]"
           >
-            2026 Admissions Open
-          </motion.span>
+            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            2026 Admissions Now Open
+          </motion.div>
+          
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mb-4 font-heading font-black text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1]"
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="mb-8 font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white leading-[1] tracking-tight"
           >
-            Your Journey <span className="text-gold">Begins Here</span>
+            Shape Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold">Future Today.</span>
           </motion.h1>
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="max-w-2xl mx-auto text-lg text-white/80 leading-relaxed"
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="max-w-3xl mx-auto mb-12 text-lg font-light leading-relaxed md:text-xl text-white/70"
           >
-            We've simplified our admissions process to focus on what matters most: you.
-            Reach out directly to our team to discover how SM Academy can shape your future.
+            Experience a world-class education designed to empower ambition. 
+            Our streamlined admissions process is built to help you transition 
+            seamlessly into your next academic chapter.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <a
+              href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20start%20my%20application%20for%20the%202026%20batch%20at%20SM%20Academy.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 btn-gold"
+            >
+              Start Application <HiArrowRight />
+            </a>
+            <a
+              href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20request%20the%20latest%20brochure%20for%20SM%20Academy.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 text-white font-bold rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+            >
+              Download Brochure
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── SCHOLARSHIP BANNER ───────────────────────────── */}
-      <section className="px-6 py-12 -mt-12 relative z-20">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative z-20 px-6 py-12 -mt-20">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection animation="fade-up">
-            <div className="bg-gradient-to-r from-gold to-yellow-500 rounded-[2rem] p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-primary overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-              <div className="relative z-10 max-w-xl">
-                <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest uppercase bg-primary text-gold rounded-full">
-                  Merit Scholarship
-                </span>
-                <h2 className="text-3xl md:text-4xl font-black font-heading mb-4 leading-tight">
-                  FREE ADMISSION IN INTERMEDIATE FOR MERIT STUDENTS.
-                </h2>
-                <p className="text-primary/80 font-medium text-lg">
-                  A thoughtful initiative to support and nurture exceptional academic talent.
-                </p>
-              </div>
-              <div className="relative z-10 shrink-0">
-                <a
-                  href={`https://wa.me/91${contactInfo.phones[0].replace(/\s/g, "")}?text=Hi!%20I%20want%20to%20claim%20the%20Merit%20Scholarship.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-gold font-bold rounded-full hover:scale-105 transition-transform shadow-xl"
-                >
-                  Claim Scholarship <HiArrowRight />
-                </a>
+            <div className="group relative overflow-hidden bg-primary rounded-[3rem] p-1 md:p-1.5 shadow-2xl transition-all duration-500 hover:shadow-gold/10 hover:shadow-[0_0_50px_rgba(252,212,0,0.15)]">
+              {/* Inner Gradient Border Effect */}
+              <div className="absolute inset-0 opacity-50 bg-gradient-to-r from-gold/40 via-yellow-200/20 to-gold/40" />
+              
+              <div className="relative z-10 bg-primary/90 backdrop-blur-xl rounded-[2.8rem] p-8 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden">
+                {/* Decorative Pattern */}
+                <div className="absolute top-0 right-0 w-1/2 h-full pointer-events-none opacity-10">
+                  <svg viewBox="0 0 100 100" className="w-full h-full">
+                    <defs>
+                      <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100" height="100" fill="url(#grid)" />
+                  </svg>
+                </div>
+
+                <div className="max-w-2xl text-center lg:text-left">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-black tracking-[0.3em] uppercase bg-gold text-primary rounded-full"
+                  >
+                    Exclusive Opportunity
+                  </motion.div>
+                  <h2 className="text-3xl md:text-5xl font-black font-heading text-white mb-6 leading-[1.1]">
+                    Merit-Based <span className="text-gold">Free Admission</span>
+                  </h2>
+                  <p className="text-lg font-light leading-relaxed text-white/60 md:text-xl">
+                    We believe in students hard work and potential. SM Academy offers 
+                    <span className="font-medium text-white"> scholarship </span> 
+                    for high-performing intermediate students.
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center gap-6 shrink-0">
+                  <div className="relative">
+                    <div className="absolute inset-0 transition-opacity bg-gold blur-2xl opacity-20 group-hover:opacity-40" />
+                    <a
+                      href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Merit%20Scholarship%20opportunities%20at%20SM%20Academy.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative inline-flex items-center gap-3 px-10 py-5 text-sm font-black tracking-wider uppercase transition-all rounded-full shadow-2xl bg-gold text-primary hover:bg-white hover:scale-105"
+                    >
+                      Claim Scholarship <HiArrowRight className="text-xl" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>
@@ -101,25 +165,25 @@ export default function Admissions() {
       </section>
 
       {/* ─── ENROLLMENT PROCESS ───────────────────────────── */}
-      <section className="px-6 py-20 mx-auto max-w-7xl">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary mb-4">
+      <section id="process" className="px-6 py-20 mx-auto max-w-7xl">
+        <AnimatedSection className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-black md:text-5xl font-heading text-primary">
             3 Steps to Enrollment
           </h2>
           <div className="w-20 h-1.5 bg-gold mx-auto rounded-full" />
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {steps.map((step, i) => (
             <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
-              <div className="bg-white border border-outline-variant rounded-3xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 h-full">
-                <div className="w-16 h-16 rounded-2xl bg-primary-container text-primary flex items-center justify-center text-3xl mb-6">
+              <div className="h-full p-8 transition-all duration-300 bg-white border border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2">
+                <div className="flex items-center justify-center w-16 h-16 mb-6 text-3xl rounded-2xl bg-primary-container text-primary">
                   {step.icon}
                 </div>
-                <h3 className="text-xl font-bold font-heading text-primary mb-3">
+                <h3 className="mb-3 text-xl font-bold font-heading text-primary">
                   {step.title}
                 </h3>
-                <p className="text-on-surface-variant leading-relaxed">
+                <p className="leading-relaxed text-on-surface-variant">
                   {step.desc}
                 </p>
               </div>
@@ -131,34 +195,34 @@ export default function Admissions() {
       {/* ─── DIRECT CONTACT HUB ───────────────────────────── */}
       <section className="px-6 py-24 bg-surface-container-low">
         <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Contact Details */}
             <div className="space-y-10">
               <AnimatedSection>
-                <span className="text-gold font-bold tracking-widest uppercase text-sm mb-2 block">
+                <span className="block mb-2 text-sm font-bold tracking-widest uppercase text-gold">
                   Get in Touch
                 </span>
-                <h2 className="text-4xl md:text-6xl font-black font-heading text-primary mb-6 leading-tight">
+                <h2 className="mb-6 text-4xl font-black leading-tight md:text-6xl font-heading text-primary">
                   We're Here to Help You Succeed.
                 </h2>
-                <p className="text-lg text-on-surface-variant mb-10">
+                <p className="mb-10 text-lg text-on-surface-variant">
                   Our admissions counselors are available Monday through Saturday, 9:00 AM to 6:00 PM to assist you.
                 </p>
               </AnimatedSection>
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <AnimatedSection delay={100} animation="fade-right">
-                  <div className="bg-white p-6 rounded-3xl border border-outline-variant shadow-sm h-full">
-                    <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary text-2xl mb-4">
+                  <div className="h-full p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                    <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl bg-primary/5 rounded-xl text-primary">
                       <HiPhone />
                     </div>
-                    <h4 className="font-bold text-lg text-primary mb-2">Call Us</h4>
+                    <h4 className="mb-2 text-lg font-bold text-primary">Call Us</h4>
                     <div className="space-y-1">
                       {contactInfo.phones.map((p) => (
                         <a
                           key={p}
                           href={`tel:${p.replace(/\s/g, "")}`}
-                          className="block text-on-surface-variant hover:text-primary transition-colors text-lg"
+                          className="block text-lg transition-colors text-on-surface-variant hover:text-primary"
                         >
                           {p}
                         </a>
@@ -168,16 +232,16 @@ export default function Admissions() {
                 </AnimatedSection>
 
                 <AnimatedSection delay={200} animation="fade-right">
-                  <div className="bg-white p-6 rounded-3xl border border-outline-variant shadow-sm h-full">
-                    <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-4">
+                  <div className="h-full p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                    <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl text-green-600 bg-green-500/10 rounded-xl">
                       <FaWhatsapp />
                     </div>
-                    <h4 className="font-bold text-lg text-primary mb-2">WhatsApp</h4>
+                    <h4 className="mb-2 text-lg font-bold text-primary">WhatsApp</h4>
                     <a
                       href={`https://wa.me/91${contactInfo.phones[0].replace(/\s/g, "")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-on-surface-variant hover:text-green-600 transition-colors text-lg"
+                      className="block text-lg transition-colors text-on-surface-variant hover:text-green-600"
                     >
                       Chat with Admissions
                     </a>
@@ -186,15 +250,15 @@ export default function Admissions() {
               </div>
 
               <AnimatedSection delay={300} animation="fade-up">
-                <div className="bg-white p-6 rounded-3xl border border-outline-variant shadow-sm flex items-center gap-6">
-                  <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center text-gold text-2xl shrink-0">
+                <div className="flex items-center gap-6 p-6 bg-white border shadow-sm rounded-3xl border-outline-variant">
+                  <div className="flex items-center justify-center w-12 h-12 text-2xl bg-gold/20 rounded-xl text-gold shrink-0">
                     <HiMail />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg text-primary mb-1">Email Address</h4>
+                    <h4 className="mb-1 text-lg font-bold text-primary">Email Address</h4>
                     <a
                       href={`mailto:${contactInfo.email}`}
-                      className="text-on-surface-variant hover:text-primary transition-colors text-lg break-all"
+                      className="text-lg break-all transition-colors text-on-surface-variant hover:text-primary"
                     >
                       {contactInfo.email}
                     </a>
@@ -217,12 +281,12 @@ export default function Admissions() {
                   ></iframe>
                   
                   {/* Address overlay */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-primary/90 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white shadow-xl">
-                    <div className="flex gap-4 items-start">
-                      <HiLocationMarker className="text-3xl text-gold shrink-0 mt-1" />
+                  <div className="absolute p-6 text-white border shadow-xl bottom-6 left-6 right-6 bg-primary/90 backdrop-blur-md border-white/20 rounded-2xl">
+                    <div className="flex items-start gap-4">
+                      <HiLocationMarker className="mt-1 text-3xl text-gold shrink-0" />
                       <div>
-                        <h4 className="font-bold text-xl mb-2 font-heading">Campus Location</h4>
-                        <p className="text-white/80 leading-relaxed text-sm">
+                        <h4 className="mb-2 text-xl font-bold font-heading">Campus Location</h4>
+                        <p className="text-sm leading-relaxed text-white/80">
                           {contactInfo.address}
                         </p>
                       </div>
@@ -236,25 +300,25 @@ export default function Admissions() {
       </section>
 
       {/* ─── FAST-TRACK BENTO ─────────────────────────────── */}
-      <section className="px-6 py-24 bg-white mx-auto">
-        <div className="max-w-7xl mx-auto">
+      <section className="px-6 py-24 mx-auto bg-white">
+        <div className="mx-auto max-w-7xl">
           <AnimatedSection className="mb-12 text-center">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            <h2 className="mb-4 text-3xl font-bold font-heading md:text-4xl text-primary">
               Admissions Fast-Track
             </h2>
             <p className="text-on-surface-variant">Everything you need to know at a glance.</p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             {admissionFastTrack.map((item, i) => (
               <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
-                <div className="p-8 bg-surface-container-lowest border border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer h-full flex flex-col justify-center items-center text-center">
-                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex flex-col items-center justify-center h-full p-8 text-center transition-all duration-300 border cursor-pointer bg-surface-container-lowest border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2 group">
+                  <div className="mb-6 text-5xl transition-transform duration-300 group-hover:scale-110">
                     {item.icon}
                   </div>
-                  <h4 className="mb-3 font-heading font-bold text-2xl text-primary">
+                  <h4 className="mb-3 text-2xl font-bold font-heading text-primary">
                     {item.title}
                   </h4>
-                  <p className="text-on-surface-variant leading-relaxed">
+                  <p className="leading-relaxed text-on-surface-variant">
                     {item.description}
                   </p>
                 </div>

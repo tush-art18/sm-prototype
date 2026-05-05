@@ -144,6 +144,14 @@ export default function Faculty() {
               Are you a passionate educator looking to make a difference? We are always looking
               for exceptional talent to join our academic family.
             </p>
+            <a
+              href={`https://wa.me/919177890581?text=Hi!%20I'm%20a%20passionate%20educator%20and%20I'd%20like%20to%20inquire%20about%20career%20opportunities%20at%20SM%20Academy.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 btn-gold"
+            >
+              Join Our Team <HiArrowRight />
+            </a>
           </div>
         </AnimatedSection>
       </section>

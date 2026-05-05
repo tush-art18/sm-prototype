@@ -128,9 +128,14 @@ export default function Home() {
                 <Link to="/courses" className="flex items-center gap-2 btn-gold">
                   Explore Programs <HiArrowRight />
                 </Link>
-                <Link to="/admissions" className="flex items-center gap-2 btn-outline">
+                <a
+                  href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 btn-outline"
+                >
                   Limited Seats - Apply Now
-                </Link>
+                </a>
               </div>
             </motion.div>
 
@@ -319,12 +324,22 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <Link to="/admissions" className="text-center btn-gold whitespace-nowrap">
+                  <a
+                    href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20apply%20for%20the%202026%20academic%20year.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center btn-gold whitespace-nowrap"
+                  >
                     Apply Online
-                  </Link>
-                  <button className="px-10 py-4 text-sm font-bold tracking-wide text-white uppercase transition-all border rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm">
+                  </a>
+                  <a
+                    href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20schedule%20a%20visit%20to%20the%20SM%20Academy%20campus.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-4 text-sm font-bold tracking-wide text-white uppercase transition-all border rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm"
+                  >
                     Book a Tour
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

@@ -86,12 +86,14 @@ export default function Navbar() {
           {/* ── Right Actions ── */}
           <div className="flex items-center gap-4">
 
-            <Link
-              to="/admissions"
+            <a
+              href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:block px-6 py-2.5 text-sm font-bold tracking-wide text-primary transition-all duration-300 rounded-full bg-gold hover:scale-105 hover:shadow-xl hover:shadow-gold/30 active:scale-95"
             >
               Apply Now
-            </Link>
+            </a>
 
             {/* Mobile hamburger */}
             <button
@@ -200,8 +202,10 @@ export default function Navbar() {
               <p className="text-sm font-medium text-on-surface-variant text-center mb-4">
                 Admissions open for 2026 Academic Year
               </p>
-              <Link
-                to="/admissions"
+              <a
+                href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 style={{ transitionDelay: menuOpen ? "600ms" : "0ms" }}
                 className={`block w-full py-5 text-lg font-black text-center text-primary rounded-2xl bg-gold hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 shadow-xl shadow-gold/30 ${
@@ -209,7 +213,7 @@ export default function Navbar() {
                 }`}
               >
                 Apply Now →
-              </Link>
+              </a>
             </div>
           </div>
         </div>

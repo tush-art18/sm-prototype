@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection";
-import { courses, coachingFeatures } from "../data/data";
+import { courses } from "../data/data";
 import { HiArrowRight, HiCheckCircle } from "react-icons/hi";
 
 function CourseCard({ course, index }) {
@@ -48,13 +48,15 @@ function CourseCard({ course, index }) {
             ))}
           </ul>
 
-          <Link
-            to="/admissions"
+          <a
+            href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20see%20the%20curriculum%20for%20the%20${course.title}%20program.`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative z-10 flex items-center gap-2 pb-1 text-xs font-bold tracking-widest uppercase transition-all duration-300 border-b-2 text-primary group/btn hover:gap-4 border-primary w-fit mt-auto"
           >
             Explore Curriculum{" "}
             <HiArrowRight className="transition-transform group-hover/btn:translate-x-2" />
-          </Link>
+          </a>
         </div>
 
         {/* Image side */}
@@ -161,19 +163,22 @@ export default function Courses() {
             </p>
           </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {coachingFeatures.map((f, i) => (
-              <AnimatedSection key={i} delay={i * 100} animation="fade-up">
-                <div className="p-8 transition-all duration-300 bg-white border border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2 group">
-                  <div className="mb-5 text-4xl transition-transform duration-300 group-hover:scale-110">
-                    {f.icon}
-                  </div>
-                  <h4 className="mb-3 text-xl font-bold font-heading text-primary">{f.title}</h4>
-                  <p className="leading-relaxed text-on-surface-variant">{f.description}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+          <AnimatedSection animation="fade-up" delay={200} className="max-w-4xl mx-auto">
+            <div className="p-10 md:p-16 bg-white border border-outline-variant rounded-[3rem] shadow-xl text-center relative overflow-hidden">
+              {/* Decorative accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-tr-full pointer-events-none" />
+              
+              <div className="relative z-10">
+                <p className="text-xl md:text-2xl leading-relaxed text-on-surface-variant font-medium">
+                  Exclusive coaching for <span className="text-primary font-bold">NEET students</span>. 
+                  Our signature 2-year program ensures students are not just exam-ready, but future-ready. 
+                  It definitely helps them to <span className="text-gold font-bold">improve scores</span> and achieve their medical aspirations.
+                </p>
+                <div className="mt-10 w-24 h-1.5 bg-gold mx-auto rounded-full" />
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -197,10 +202,14 @@ export default function Courses() {
                 SM Junior College & Academy today.
               </p>
               <div className="flex flex-col justify-center gap-4 md:flex-row">
-                <button className="btn-gold">Download Prospectus</button>
-                <Link to="/admissions" className="text-center btn-outline">
+                <a
+                  href={`https://wa.me/919177890581?text=Hi!%20I%20have%20some%20questions%20about%20the%20admissions%20process%20at%20SM%20Academy.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center btn-outline"
+                >
                   Contact Admissions
-                </Link>
+                </a>
               </div>
             </div>
           </div>
