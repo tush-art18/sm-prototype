@@ -7,10 +7,10 @@ import AnimatedSection from "../components/AnimatedSection";
 import { useScrollAnimation, useCountUp } from "../hooks/useScrollAnimation";
 import {
   homeStats, coreValues, academicStreams,
-  bentoImages, testimonials
+  bentoImages
 } from "../data/data";
 import { HiX } from "react-icons/hi";
-import { HiArrowRight, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { HiArrowRight } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
 
 // Stat counter card
@@ -40,7 +40,6 @@ function Particle({ style }) {
 }
 
 export default function Home() {
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
   const [particles] = useState(() =>
     Array.from({ length: 12 }, (_, i) => ({
@@ -52,11 +51,6 @@ export default function Home() {
       background: i % 2 === 0 ? "rgba(252, 212, 0, 0.4)" : "rgba(255,255,255,0.2)",
     }))
   );
-
-  const prevTestimonial = () =>
-    setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
-  const nextTestimonial = () =>
-    setTestimonialIndex((i) => (i + 1) % testimonials.length);
 
   return (
     <main>
@@ -297,71 +291,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ─────────────────────────────────── */}
-      <section className="relative py-24 overflow-hidden bg-white">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary/5 rounded-full pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/5 rounded-full pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl px-6 mx-auto text-center">
-          <AnimatedSection>
-            <div className="mb-8 font-serif leading-none text-8xl text-primary/10">"</div>
-
-            <div className="relative overflow-hidden">
-              <motion.div
-                key={testimonialIndex}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.5 }}
-              >
-                <blockquote className="mb-10 text-2xl italic font-light leading-relaxed md:text-4xl text-primary">
-                  "{testimonials[testimonialIndex].quote}"
-                </blockquote>
-                <div className="flex flex-col items-center gap-4">
-                  <div className="w-16 h-16 overflow-hidden border-4 rounded-full border-gold">
-                    <img
-                      src={testimonials[testimonialIndex].avatar}
-                      alt={testimonials[testimonialIndex].name}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold text-primary">{testimonials[testimonialIndex].name}</p>
-                    <p className="text-xs font-bold tracking-widest uppercase text-on-surface-variant">
-                      {testimonials[testimonialIndex].role}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Controls */}
-            <div className="flex items-center justify-center gap-4 mt-10">
-              <button
-                onClick={prevTestimonial}
-                className="p-3 transition-all duration-300 border rounded-full border-outline/30 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <HiChevronLeft className="text-xl" />
-              </button>
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setTestimonialIndex(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === testimonialIndex ? "bg-primary w-8" : "bg-outline/30"
-                  }`}
-                />
-              ))}
-              <button
-                onClick={nextTestimonial}
-                className="p-3 transition-all duration-300 border rounded-full border-outline/30 hover:border-primary hover:bg-primary hover:text-white"
-              >
-                <HiChevronRight className="text-xl" />
-              </button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* ─── CTA BANNER ────────────────────────────────────── */}
       <section className="px-6 pb-24">

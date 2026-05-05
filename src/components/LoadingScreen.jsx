@@ -127,7 +127,7 @@ export default function LoadingScreen({ onFinish, externalProgress = 0, readyToE
               margin: "0 0 0.35rem 0",
             }}
           >
-            SM Junior College
+            SM Jr College
           </h1>
           <p
             style={{
@@ -140,7 +140,7 @@ export default function LoadingScreen({ onFinish, externalProgress = 0, readyToE
               margin: 0,
             }}
           >
-            &amp; Academy
+            &amp; Coaching & Academy
           </p>
         </div>
 
