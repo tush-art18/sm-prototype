@@ -1,6 +1,7 @@
 // src/App.jsx
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -124,10 +125,61 @@ function AppLayout() {
   );
 }
 
+const MIN_DISPLAY_MS = 3000; // always show at least this long
+
 export default function App() {
+  const [loading, setLoading] = useState(true);
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [readyToExit, setReadyToExit] = useState(false);
+
+  useEffect(() => {
+    const startedAt = Date.now();
+
+    // Milestone helper — only moves forward
+    let current = 0;
+    const advance = (to) => {
+      if (to > current) {
+        current = to;
+        setLoadProgress(to);
+      }
+    };
+
+    // ── Milestone 1: React has mounted (JS parsed & first render done)
+    advance(30);
+
+    // ── Milestone 2: fonts + stylesheets ready (document.fonts)
+    document.fonts.ready.then(() => advance(60));
+
+    // ── Milestone 3: all resources loaded (images, scripts, iframes)
+    const onLoad = () => {
+      advance(100);
+      // Wait for remainder of minimum display time before hiding
+      const elapsed = Date.now() - startedAt;
+      const wait    = Math.max(0, MIN_DISPLAY_MS - elapsed);
+      setTimeout(() => setReadyToExit(true), wait); 
+    };
+
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad, { once: true });
+    }
+
+    return () => window.removeEventListener("load", onLoad);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <AppLayout />
-    </BrowserRouter>
+    <>
+      {loading && (
+        <LoadingScreen
+          externalProgress={loadProgress}
+          readyToExit={readyToExit}
+          onFinish={() => setLoading(false)}
+        />
+      )}
+      <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter>
+    </>
   );
 }

@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6 lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 group">
-              <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src="/favicon.png" alt="SM Academy Logo" className="object-contain w-auto h-12 transition-transform duration-300 md:h-14 group-hover:scale-105" />
               <span className="text-2xl font-black font-heading">SM Academy</span>
             </Link>
             <p className="text-sm leading-relaxed text-white/60">
@@ -91,7 +91,17 @@ export default function Footer() {
         {/* Divider */}
         <div className="flex flex-col items-center justify-between gap-4 pt-8 border-t border-white/10 md:flex-row">
           <p className="text-sm text-white/40">
-            © 2024 SM Junior College & Academy. Built for Excellence.
+            © 2026 SM Jr College, Coaching & Academy. 
+            <a
+              href="https://rocketize.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Built by{" "}
+              <span className="font-bold text-transparent bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text">
+                rocketize.
+              </span>
+            </a>
           </p>
           <div className="flex gap-6 text-sm">
             {["Privacy Policy", "Terms of Service", "Sitemap"].map((item) => (
