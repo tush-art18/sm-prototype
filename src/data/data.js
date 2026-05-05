@@ -29,7 +29,7 @@ export const coreValues = [
   },
   {
     icon: "📖",
-    title: "Integrated Coaching",
+    title: "Comprehensive Coaching",
     description: "We provide comprehensive coaching for NEET and EAPCET alongside Intermediate.",
   },
   {
@@ -43,16 +43,16 @@ export const academicStreams = [
   {
     code: "BiPC",
     title: "Medical Sciences",
-    subtitle: "NEET / EAMCET",
+    subtitle: "NEET / EAPCET",
     description: "Intensive coaching tailored for securing merit seats in prestigious medical colleges.",
-    features: ["NEET Integrated Coaching", "Weekly Exams & Mock Tests", "Holistic Growth", "Result Oriented"],
+    features: ["NEET Intensive Coaching", "Weekly Exams & Mock Tests", "Overall personality development", "Result Oriented"],
     image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80",
     color: "from-teal-900 to-primary",
   },
   {
     code: "MPC",
     title: "Engineering Stream",
-    subtitle: "IIT / EAMCET",
+    subtitle: "IIT / EAPCET",
     description: "Expert mentorship to guide students through the complexities of engineering entrance exams.",
     features: ["EAPCET Coaching", "Daily Practice Papers", "Highly Efficient Faculty", "Personal Attention"],
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
@@ -83,7 +83,7 @@ export const bentoImages = [
   {
     key: "bento-4",
     alt: "Student Life",
-    caption: "Holistic Growth",
+    caption: "Overall personality development",
     image: "/image-01.jpeg",
   },
 ];
@@ -134,15 +134,16 @@ export const courses = [
     id: "bipc-neet",
     badge: "MEDICAL",
     title: "BIPC",
-    subtitle: "NEET / EAMCET",
+    subtitle: "NEET / EAPCET",
     description: "Mentor students and train them effectively to secure merit seats in Medical colleges.",
     features: [
-      "Integrated NEET coaching",
+      "Intensive NEET coaching",
       "Highly efficient faculty",
       "Weekly Exams, DPP & Mock Test",
       "Personal attention",
     ],
     icon: "🔬",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80",
     color: "bg-primary-container",
     featured: true,
   },
@@ -150,15 +151,16 @@ export const courses = [
     id: "mpc-eapcet",
     badge: "ENGINEERING",
     title: "MPC",
-    subtitle: "IIT / EAMCET",
+    subtitle: "IIT / EAPCET",
     description: "Result-oriented teaching makes it a perfect platform for students to learn, grow and achieve success.",
     features: [
       "EAPCET intensive focus",
       "Result oriented teaching",
       "Spacious classrooms",
-      "Holistic growth",
+      "Overall personality development",
     ],
     icon: "⚙️",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80",
     color: "bg-white",
     featured: false,
   },
@@ -175,22 +177,7 @@ export const courses = [
       "Confident individual focus",
     ],
     icon: "📊",
-    color: "bg-white",
-    featured: false,
-  },
-  {
-    id: "long-term",
-    badge: "SPECIALIZED",
-    title: "LONG-TERM",
-    subtitle: "NEET / EAMCET",
-    description: "Dedicated long-term coaching for students aiming for top medical and engineering ranks.",
-    features: [
-      "Rigorous Mock Tests",
-      "Daily Practice Papers (DPP)",
-      "Mentorship and motivation",
-      "Best results ensured",
-    ],
-    icon: "🎯",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
     color: "bg-white",
     featured: false,
   },
@@ -198,8 +185,8 @@ export const courses = [
 
 export const coachingFeatures = [
   {
-    title: "Integrated Coaching",
-    description: "Comprehensive coaching for NEET/EAPCET seamlessly integrated with Intermediate syllabus.",
+    title: "Comprehensive Coaching",
+    description: "Comprehensive coaching for NEET/EAPCET seamlessly aligned with the Intermediate syllabus.",
     icon: "📚",
   },
   {
@@ -235,13 +222,13 @@ export const faculty = [
   {
     name: "Ms. Shabana Parveen",
     role: "M.Sc Botany",
-    bio: "Ensuring holistic growth and motivating students to tap their potential.",
+    bio: "Ensuring overall personality development and motivating students to tap their potential.",
     image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=400&q=80",
   },
   {
     name: "Ms. Asma Parveen",
     role: "M.Sc Chemistry",
-    bio: "Providing integrated coaching with daily practice papers and mock tests.",
+    bio: "Providing intensive coaching with daily practice papers and mock tests.",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
   },
   {
@@ -280,7 +267,7 @@ export const faculty = [
 export const contactInfo = {
   address: "4th & 5th FLOOR, LIGHT HOUSE, OPP BALSHETTY KHETH, HYDERABAD - 500024",
   phones: ["91778 90581", "70938 30167"],
-  email: "admissions@smacademy.com",
+  email: "smjr1272@gmail.com",
   accreditation: "Saint Mesum Education Society",
 };
 
@@ -298,6 +285,6 @@ export const admissionFastTrack = [
   {
     icon: "🎓",
     title: "Scholarships",
-    description: "FREE ADMISSION for students with above 90% in SSC.",
+    description: "FREE ADMISSION IN INTERMEDIATE FOR MERIT STUDENTS.",
   },
 ];

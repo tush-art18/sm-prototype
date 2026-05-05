@@ -6,62 +6,63 @@ import { courses, coachingFeatures } from "../data/data";
 import { HiArrowRight, HiCheckCircle } from "react-icons/hi";
 
 function CourseCard({ course, index }) {
-  const isFeatured = course.featured;
-
   return (
     <AnimatedSection
       animation="fade-up"
       delay={index * 120}
-      className={isFeatured ? "md:col-span-2" : ""}
+      className="h-full"
     >
       <div
-        className={`group relative flex flex-col justify-between p-8 md:p-10 h-full border transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden ${
-          isFeatured
-            ? "bg-white border-outline-variant rounded-3xl shadow-md"
-            : "bg-white border-outline-variant rounded-3xl"
-        }`}
+        className="group relative flex flex-col md:flex-row p-6 md:p-8 h-full bg-white border border-outline-variant rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden"
       >
-        {/* Badge */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-3xl">{course.icon}</span>
-          {course.badge && (
-            <span className="px-3 py-1 text-xs font-bold tracking-wider rounded-full bg-gold text-primary">
-              {course.badge}
-            </span>
-          )}
-        </div>
-
         {/* Decorative background shape */}
-        <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-surface-container-low group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
+        <div className="absolute w-40 h-40 transition-transform duration-700 rounded-full pointer-events-none -top-8 -left-8 bg-surface-container-low group-hover:scale-150" />
 
-        <div className="relative z-10">
-          <p className="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-2">
+        <div className="relative z-10 flex-1 flex flex-col pr-0 md:pr-6 mb-6 md:mb-0">
+          {/* Badge & Icon */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-3xl">{course.icon}</span>
+            {course.badge && (
+              <span className="px-3 py-1 text-xs font-bold tracking-wider rounded-full bg-gold text-primary">
+                {course.badge}
+              </span>
+            )}
+          </div>
+
+          <p className="mb-1 text-xs font-bold tracking-widest uppercase text-on-surface-variant">
             {course.subtitle}
           </p>
-          <h2 className="mb-4 font-heading font-bold text-2xl md:text-3xl text-primary">
+          <h2 className="mb-4 text-2xl font-bold font-heading md:text-3xl text-primary">
             {course.title}
           </h2>
-          <p className="mb-6 text-base text-on-surface-variant leading-relaxed">
+          <p className="mb-6 text-sm leading-relaxed text-on-surface-variant">
             {course.description}
           </p>
 
-          <ul className={`mb-8 space-y-3 ${isFeatured ? "grid grid-cols-1 md:grid-cols-2 gap-3 space-y-0" : ""}`}>
+          <ul className="mb-8 space-y-2 flex-1">
             {course.features.map((f) => (
               <li key={f} className="flex items-center gap-3">
-                <HiCheckCircle className="text-primary text-lg flex-shrink-0" />
-                <span className="text-sm font-medium">{f}</span>
+                <HiCheckCircle className="flex-shrink-0 text-primary" />
+                <span className="text-xs font-medium">{f}</span>
               </li>
             ))}
           </ul>
+
+          <Link
+            to="/admissions"
+            className="relative z-10 flex items-center gap-2 pb-1 text-xs font-bold tracking-widest uppercase transition-all duration-300 border-b-2 text-primary group/btn hover:gap-4 border-primary w-fit mt-auto"
+          >
+            Explore Curriculum{" "}
+            <HiArrowRight className="transition-transform group-hover/btn:translate-x-2" />
+          </Link>
         </div>
 
-        <Link
-          to="/admissions"
-          className="relative z-10 flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-primary group/btn hover:gap-4 transition-all duration-300 border-b-2 border-primary pb-1 w-fit"
-        >
-          Explore Curriculum{" "}
-          <HiArrowRight className="transition-transform group-hover/btn:translate-x-2" />
-        </Link>
+        {/* Image side */}
+        <div className="w-full md:w-2/5 shrink-0 relative flex flex-col justify-center">
+          <div className="w-full h-48 md:h-full md:min-h-[300px] rounded-2xl overflow-hidden shadow-inner">
+            <img src={course.image} alt={course.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
+          </div>
+        </div>
       </div>
     </AnimatedSection>
   );
@@ -71,7 +72,7 @@ export default function Courses() {
   return (
     <main className="pt-20">
       {/* ─── HERO HEADER ──────────────────────────────────── */}
-      <section className="relative px-6 py-24 bg-primary overflow-hidden">
+      <section className="relative px-6 py-24 overflow-hidden bg-primary">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -79,7 +80,7 @@ export default function Courses() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
+        <div className="absolute rounded-full pointer-events-none -bottom-32 -left-32 w-96 h-96 bg-gold/10 blur-3xl" />
 
         <div className="relative z-10 px-0 mx-auto max-w-7xl">
           <motion.span
@@ -103,7 +104,7 @@ export default function Courses() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="max-w-2xl text-lg text-white/70 leading-relaxed"
+            className="max-w-2xl text-lg leading-relaxed text-white/70"
           >
             Empowering students through specialized coaching and a rigorous academic curriculum
             designed for competitive success.
@@ -113,53 +114,49 @@ export default function Courses() {
 
       {/* ─── COURSE CARDS ─────────────────────────────────── */}
       <section className="px-6 py-24 mx-auto max-w-7xl">
-        {/* Side cards: Highly efficient faculty + Affordable fee */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
-          {/* Featured BIPC NEET card */}
-          <div className="md:col-span-8">
-            <CourseCard course={courses[0]} index={0} />
-          </div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Top Left: BIPC */}
+          <CourseCard course={courses[0]} index={0} />
 
-          {/* Side info cards */}
-          <div className="md:col-span-4 flex flex-col gap-6">
-            <AnimatedSection animation="fade-right" delay={200}>
-              <div className="flex flex-col justify-center h-full p-8 text-white rounded-3xl bg-primary-container shadow-lg hover:-translate-y-1 transition-all duration-300">
+          {/* Top Right: MPC */}
+          <CourseCard course={courses[1]} index={1} />
+
+          {/* Bottom Left: Side info cards stacked */}
+          <div className="flex flex-col gap-8 h-full">
+            <AnimatedSection animation="fade-right" delay={200} className="flex-1">
+              <div className="flex flex-col justify-center h-full p-8 text-white transition-all duration-300 shadow-lg rounded-3xl bg-primary-container hover:-translate-y-1">
                 <span className="mb-4 text-4xl">🎓</span>
-                <h3 className="mb-2 font-heading font-bold text-xl">Highly Efficient Faculty</h3>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <h3 className="mb-2 text-xl font-bold font-heading">Highly Efficient Faculty</h3>
+                <p className="text-sm leading-relaxed text-white/70">
                   Learn from highly qualified educators with extensive competitive teaching experience and a passion for student success.
                 </p>
               </div>
             </AnimatedSection>
-            <AnimatedSection animation="fade-right" delay={300}>
-              <div className="h-full p-8 rounded-3xl bg-gold shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <span className="mb-4 text-4xl block">💰</span>
-                <h3 className="mb-2 font-heading font-bold text-xl text-primary">Affordable Fee</h3>
-                <p className="text-primary/70 text-sm leading-relaxed">
+            <AnimatedSection animation="fade-right" delay={300} className="flex-1">
+              <div className="h-full p-8 transition-all duration-300 shadow-lg flex flex-col justify-center rounded-3xl bg-gold hover:-translate-y-1">
+                <span className="block mb-4 text-4xl">💰</span>
+                <h3 className="mb-2 text-xl font-bold font-heading text-primary">Affordable Fee</h3>
+                <p className="text-sm leading-relaxed text-primary/70">
                   Premium education accessible to all. We offer flexible payment plans and merit scholarships.
                 </p>
               </div>
             </AnimatedSection>
           </div>
-        </div>
 
-        {/* Other Courses */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {courses.slice(1).map((course, i) => (
-            <CourseCard key={course.id} course={course} index={i + 1} />
-          ))}
+          {/* Bottom Right: CEC */}
+          <CourseCard course={courses[2]} index={2} />
         </div>
       </section>
 
       {/* ─── LONG-TERM COACHING ───────────────────────────── */}
       <section className="px-6 py-24 bg-surface-container-low">
         <div className="mx-auto max-w-7xl">
-          <AnimatedSection className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="mb-4 font-heading font-black text-4xl md:text-5xl text-primary">
+          <AnimatedSection className="max-w-3xl mx-auto mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-black font-heading md:text-5xl text-primary">
               Long-term Coaching
             </h2>
             <p className="text-lg text-on-surface-variant">
-              Our signature 2-year integrated program ensures students are not just
+              Our signature 2-year program ensures students are not just
               exam-ready, but future-ready.
             </p>
           </AnimatedSection>
@@ -167,12 +164,12 @@ export default function Courses() {
           <div className="grid gap-8 md:grid-cols-3">
             {coachingFeatures.map((f, i) => (
               <AnimatedSection key={i} delay={i * 100} animation="fade-up">
-                <div className="p-8 bg-white border border-outline-variant rounded-3xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                  <div className="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-8 transition-all duration-300 bg-white border border-outline-variant rounded-3xl hover:shadow-xl hover:-translate-y-2 group">
+                  <div className="mb-5 text-4xl transition-transform duration-300 group-hover:scale-110">
                     {f.icon}
                   </div>
-                  <h4 className="mb-3 font-heading font-bold text-xl text-primary">{f.title}</h4>
-                  <p className="text-on-surface-variant leading-relaxed">{f.description}</p>
+                  <h4 className="mb-3 text-xl font-bold font-heading text-primary">{f.title}</h4>
+                  <p className="leading-relaxed text-on-surface-variant">{f.description}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -192,16 +189,16 @@ export default function Courses() {
               />
             </div>
             <div className="relative z-10 max-w-3xl px-8 py-16 mx-auto text-center md:p-20">
-              <h2 className="mb-6 text-white font-heading font-black text-4xl md:text-5xl">
+              <h2 className="mb-6 text-4xl font-black text-white font-heading md:text-5xl">
                 Ready to start your journey?
               </h2>
-              <p className="mb-10 text-white/70 text-lg">
+              <p className="mb-10 text-lg text-white/70">
                 Admissions are now open for the upcoming academic session. Secure your seat at
                 SM Junior College & Academy today.
               </p>
               <div className="flex flex-col justify-center gap-4 md:flex-row">
                 <button className="btn-gold">Download Prospectus</button>
-                <Link to="/admissions" className="btn-outline text-center">
+                <Link to="/admissions" className="text-center btn-outline">
                   Contact Admissions
                 </Link>
               </div>

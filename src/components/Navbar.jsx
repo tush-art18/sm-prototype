@@ -40,15 +40,13 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/30">
-              <span className="text-lg font-black text-gold leading-none">SM</span>
-            </div>
+            <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
             <span
               className={`text-2xl font-black font-heading tracking-tight transition-colors duration-300 ${
                 solidBg ? "text-primary" : "text-white"
               }`}
             >
-              Academy
+              SM Academy
             </span>
           </Link>
 
@@ -154,10 +152,8 @@ export default function Navbar() {
                 className="flex items-center gap-3"
                 onClick={() => setMenuOpen(false)}
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary shadow-lg shadow-primary/20">
-                  <span className="text-lg font-black text-gold">SM</span>
-                </div>
-                <span className="text-2xl font-black text-primary font-heading">Academy</span>
+                <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 w-auto object-contain" />
+                <span className="text-2xl font-black text-primary font-heading">SM Academy</span>
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}

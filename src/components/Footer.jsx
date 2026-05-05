@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { navLinks, contactInfo } from "../data/data";
 import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
-import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -13,10 +13,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6 lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="flex items-center justify-center w-10 h-10 transition-transform rounded-xl bg-gold group-hover:scale-110">
-                <span className="text-lg font-black leading-none text-primary">SM</span>
-              </div>
-              <span className="text-2xl font-black font-heading">Academy</span>
+              <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <span className="text-2xl font-black font-heading">SM Academy</span>
             </Link>
             <p className="text-sm leading-relaxed text-white/60">
               Pioneering excellence in education through innovative learning models and global standard infrastructure.
@@ -24,14 +22,14 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-3">
               {[
-                { icon: FaFacebook, label: "Facebook" },
-                { icon: FaInstagram, label: "Instagram" },
-                { icon: FaYoutube, label: "YouTube" },
-                { icon: FaWhatsapp, label: "WhatsApp" },
-              ].map(({ icon: Icon, label }) => (
+                { icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/smjrcollege?utm_source=qr&igsh=YTRyMGQ5Nm96bGx3" },
+                { icon: FaWhatsapp, label: "WhatsApp", href: `https://wa.me/91${contactInfo.phones[0].replace(/\s/g, "")}` },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex items-center justify-center transition-all duration-300 border rounded-full w-9 h-9 border-white/20 text-white/60 hover:bg-gold hover:text-primary hover:border-gold"
                 >

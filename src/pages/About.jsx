@@ -75,12 +75,12 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden md:block"
+            className="items-center justify-center hidden md:flex lg:justify-end"
           >
-            <div className="overflow-hidden border-4 shadow-2xl border-white/20 aspect-video rounded-3xl">
+            <div className="w-full max-w-[360px] lg:max-w-[400px] overflow-hidden border-4 shadow-2xl border-white/20 aspect-[3/4] rounded-3xl">
               <img
                 className="object-cover w-full h-full"
-                src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80"
+                src="/infrastructure-02.jpeg"
                 alt="SM Academy Campus"
               />
             </div>
@@ -211,7 +211,7 @@ export default function About() {
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="flex items-center justify-center w-8 h-8 font-bold rounded-full bg-gold/20 text-gold">✓</span>
-                    <span className="font-medium text-primary">Holistic growth and motivation</span>
+                    <span className="font-medium text-primary">Overall personality development and motivation</span>
                   </li>
                 </ul>
               </div>
