@@ -91,13 +91,12 @@ export default function Footer() {
         {/* Divider */}
         <div className="flex flex-col items-center justify-between gap-4 pt-8 border-t border-white/10 md:flex-row">
           <p className="text-sm text-white/40">
-            © 2026 SM Jr College, Coaching & Academy. 
-            <a
+            © 2026 SM Jr College, Coaching & Academy. <a
               href="https://rocketize.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Built by{" "}
+               Built by{" "}
               <span className="font-bold text-transparent bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text">
                 rocketize.
               </span>
