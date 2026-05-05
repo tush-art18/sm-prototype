@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
 import { faculty, principal } from "../data/data";
-import { HiAcademicCap } from "react-icons/hi";
+import { HiAcademicCap, HiArrowRight } from "react-icons/hi";
 
 function FacultyCard({ member, index }) {
   return (
