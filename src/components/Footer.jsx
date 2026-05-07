@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6 lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 group">
-              <img src="/favicon.png" alt="SM Academy Logo" className="object-contain w-auto h-12 transition-transform duration-300 md:h-14 group-hover:scale-105" />
+              <img src="/favicon.png" alt="SM Academy Logo" className="object-cover w-12 h-12 rounded-full transition-transform duration-300 md:w-14 md:h-14 group-hover:scale-105 bg-white p-1.5 shadow-lg border border-white/10" />
               <span className="text-2xl font-black font-heading">SM Academy</span>
             </Link>
             <p className="text-sm leading-relaxed text-white/60">
