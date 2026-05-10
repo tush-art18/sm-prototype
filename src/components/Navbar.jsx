@@ -39,15 +39,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
 
           {/* ── Logo ── */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-            <span
-              className={`text-2xl font-black font-heading tracking-tight transition-colors duration-300 ${
-                solidBg ? "text-primary" : "text-white"
-              }`}
-            >
-              SM Academy
-            </span>
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+            <div className="relative">
+              <img src="/sm-logo.png" alt="SM Academy Logo" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-cover rounded-full bg-white p-1 shadow-md transition-transform duration-300 group-hover:scale-105 border border-primary/5" />
+            </div>
+            <div className="flex flex-col">
+              <span
+                className={`text-base sm:text-xl md:text-2xl font-black font-heading tracking-tight leading-none transition-colors duration-300 ${
+                  solidBg ? "text-primary" : "text-white"
+                }`}
+              >
+                SM Junior College <br />
+                <span className="text-[10px] sm:text-sm md:text-base font-bold tracking-widest opacity-80 uppercase">and Academy</span>
+              </span>
+            </div>
           </Link>
 
           {/* ── Desktop Nav Links ── */}
@@ -97,7 +102,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="lg:hidden p-2"
+              className="p-2 lg:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -117,7 +122,7 @@ export default function Navbar() {
               <NavLink key={link.path} to={link.path} className="flex-1">
                 {({ isActive }) =>
                   isActive ? (
-                    <div className="h-full bg-gold transition-all duration-500" />
+                    <div className="h-full transition-all duration-500 bg-gold" />
                   ) : (
                     <div className="h-full" />
                   )
@@ -148,25 +153,28 @@ export default function Navbar() {
         >
           <div className="flex flex-col h-full p-6 sm:p-8">
             {/* Header */}
-            <div className="flex items-center justify-between mb-12">
+            <div className="relative flex items-center justify-between mb-12">
               <Link
                 to="/"
-                className="flex items-center gap-3"
+                className="flex flex-col items-center gap-2 mx-auto"
                 onClick={() => setMenuOpen(false)}
               >
-                <img src="/sm-logo.png" alt="SM Academy Logo" className="h-12 w-auto object-contain" />
-                <span className="text-2xl font-black text-primary font-heading">SM Academy</span>
+                <img src="/sm-logo.png" alt="SM Academy Logo" className="h-16 w-16 object-cover rounded-full bg-primary p-1.5 shadow-xl border-2 border-gold" />
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl font-black text-primary font-heading tracking-tight">SM Junior College</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-gold font-bold">and Academy</span>
+                </div>
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-3 text-primary bg-surface-container-low hover:bg-surface-container rounded-full transition-colors"
+                className="absolute top-0 right-0 p-3 transition-colors rounded-full text-primary bg-surface-container-low hover:bg-surface-container"
               >
                 <HiX className="text-2xl" />
               </button>
             </div>
 
             {/* Links with staggered animation */}
-            <nav className="flex flex-col gap-4 overflow-y-auto pb-6">
+            <nav className="flex flex-col gap-4 pb-6 overflow-y-auto">
               {navLinks.map((link, i) => (
                 <NavLink
                   key={link.path}
@@ -198,8 +206,8 @@ export default function Navbar() {
             </nav>
 
             {/* Footer CTA */}
-            <div className="mt-auto pt-6 border-t border-outline/10">
-              <p className="text-sm font-medium text-on-surface-variant text-center mb-4">
+            <div className="pt-6 mt-auto border-t border-outline/10">
+              <p className="mb-4 text-sm font-medium text-center text-on-surface-variant">
                 Admissions open for 2026 Academic Year
               </p>
               <a

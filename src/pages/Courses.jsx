@@ -18,7 +18,7 @@ function CourseCard({ course, index }) {
         {/* Decorative background shape */}
         <div className="absolute w-40 h-40 transition-transform duration-700 rounded-full pointer-events-none -top-8 -left-8 bg-surface-container-low group-hover:scale-150" />
 
-        <div className="relative z-10 flex-1 flex flex-col pr-0 md:pr-6 mb-6 md:mb-0">
+        <div className="relative z-10 flex flex-col flex-1 pr-0 mb-6 md:pr-6 md:mb-0">
           {/* Badge & Icon */}
           <div className="flex items-center gap-3 mb-6">
             <span className="text-3xl">{course.icon}</span>
@@ -39,7 +39,7 @@ function CourseCard({ course, index }) {
             {course.description}
           </p>
 
-          <ul className="mb-8 space-y-2 flex-1">
+          <ul className="flex-1 mb-8 space-y-2">
             {course.features.map((f) => (
               <li key={f} className="flex items-center gap-3">
                 <HiCheckCircle className="flex-shrink-0 text-primary" />
@@ -52,7 +52,7 @@ function CourseCard({ course, index }) {
             href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20see%20the%20curriculum%20for%20the%20${course.title}%20program.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative z-10 flex items-center gap-2 pb-1 text-xs font-bold tracking-widest uppercase transition-all duration-300 border-b-2 text-primary group/btn hover:gap-4 border-primary w-fit mt-auto"
+            className="relative z-10 flex items-center gap-2 pb-1 mt-auto text-xs font-bold tracking-widest uppercase transition-all duration-300 border-b-2 text-primary group/btn hover:gap-4 border-primary w-fit"
           >
             Explore Curriculum{" "}
             <HiArrowRight className="transition-transform group-hover/btn:translate-x-2" />
@@ -60,7 +60,7 @@ function CourseCard({ course, index }) {
         </div>
 
         {/* Image side */}
-        <div className="w-full md:w-2/5 shrink-0 relative flex flex-col justify-center">
+        <div className="relative flex flex-col justify-center w-full md:w-2/5 shrink-0">
           <div className="w-full h-48 md:h-full md:min-h-[300px] rounded-2xl md:rounded-3xl overflow-hidden shadow-inner">
             <img src={course.image} alt={course.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
           </div>
@@ -124,7 +124,7 @@ export default function Courses() {
           <CourseCard course={courses[1]} index={1} />
 
           {/* Bottom Left: Side info cards stacked */}
-          <div className="flex flex-col gap-8 h-full">
+          <div className="flex flex-col h-full gap-8">
             <AnimatedSection animation="fade-right" delay={200} className="flex-1">
               <div className="flex flex-col justify-center h-full p-8 text-white transition-all duration-300 shadow-lg rounded-[2rem] md:rounded-3xl bg-primary-container hover:-translate-y-1">
                 <span className="mb-4 text-4xl">🎓</span>
@@ -158,7 +158,7 @@ export default function Courses() {
               Long-term Coaching
             </h2>
             <p className="text-lg text-on-surface-variant">
-              Our signature 2-year program ensures students are not just
+              Our signature 1-year program ensures students are not just
               exam-ready, but future-ready.
             </p>
           </AnimatedSection>
@@ -166,14 +166,14 @@ export default function Courses() {
           <AnimatedSection animation="fade-up" delay={200} className="max-w-4xl mx-auto">
             <div className="p-8 sm:p-10 md:p-16 bg-white border border-outline-variant rounded-[2rem] md:rounded-[3rem] shadow-xl text-center relative overflow-hidden">
               {/* Decorative accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-tr-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full pointer-events-none bg-gold/10" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 rounded-tr-full pointer-events-none bg-primary/5" />
               
               <div className="relative z-10">
-                <p className="text-lg md:text-2xl leading-relaxed text-on-surface-variant font-medium">
-                  Exclusive coaching for <span className="text-primary font-bold">NEET students</span>. 
-                  Our signature 2-year program ensures students are not just exam-ready, but future-ready. 
-                  It definitely helps them to <span className="text-gold font-bold">improve scores</span> and achieve their medical aspirations.
+                <p className="text-lg font-medium leading-relaxed md:text-2xl text-on-surface-variant">
+                  Exclusive coaching for <span className="font-bold text-primary">NEET students</span>. 
+                  Our signature 1-year program ensures students are not just exam-ready, but future-ready. 
+                  It definitely helps them to <span className="font-bold text-gold">improve scores</span> and achieve their medical aspirations.
                 </p>
                 <div className="mt-10 w-24 h-1.5 bg-gold mx-auto rounded-full" />
               </div>
@@ -194,7 +194,7 @@ export default function Courses() {
               />
             </div>
             <div className="relative z-10 max-w-3xl px-8 py-16 mx-auto text-center md:p-20">
-              <h2 className="mb-6 text-3xl sm:text-4xl font-black text-white font-heading md:text-5xl">
+              <h2 className="mb-6 text-3xl font-black text-white sm:text-4xl font-heading md:text-5xl">
                 Ready to start your journey?
               </h2>
               <p className="mb-10 text-lg text-white/70">

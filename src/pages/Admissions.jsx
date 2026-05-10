@@ -34,11 +34,11 @@ export default function Admissions() {
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1740&auto=format&fit=crop"
+            src="contact-bg.jpeg"
             alt="Students on campus"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-primary/50 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/60 to-surface" />
         </div>
 

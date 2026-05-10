@@ -187,14 +187,14 @@ export default function About() {
                 />
               </div>
             </AnimatedSection>
-
+            
             <AnimatedSection animation="fade-right">
               <div className="space-y-6">
                 <h3 className="mb-4 text-3xl font-bold font-heading text-primary">
                   Result-Oriented Teaching
                 </h3>
                 <p className="text-lg leading-relaxed text-on-surface-variant">
-                  We strive to be the BEST LEARNING HUB in the twin cities. Our working model is designed entirely around student success, focusing on limited seats to ensure absolute personal attention.
+                  We strive to be the BEST LEARNING HUB in the twin cities. Our working model is designed entirely around student success, focusing on limited seats to ensure absolute personal attention. 
                 </p>
                 <ul className="mt-6 space-y-4">
                   <li className="flex items-center gap-3">
@@ -243,8 +243,9 @@ export default function About() {
                   delay={i * 150}
                 >
                   <div
-                    className={`relative flex flex-col items-center gap-8 md:flex-row ${i % 2 !== 0 ? "md:flex-row-reverse" : ""
-                      }`}
+                    className={`relative flex flex-col items-center gap-8 md:flex-row ${
+                      i % 2 !== 0 ? "md:flex-row-reverse" : ""
+                    }`}
                   >
                     <div className={`flex-1 ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
                       <div className="p-6 transition-shadow duration-300 bg-white border shadow-md rounded-[1.5rem] md:rounded-2xl hover:shadow-xl border-outline-variant/50 hover:-translate-y-1">

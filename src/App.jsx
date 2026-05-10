@@ -125,7 +125,7 @@ function AppLayout() {
   );
 }
 
-const MIN_DISPLAY_MS = 3000; // always show at least this long
+const MIN_DISPLAY_MS = 1500; // always show at least this long
 
 export default function App() {
   const [loading, setLoading] = useState(true);
