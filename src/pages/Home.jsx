@@ -160,7 +160,7 @@ export default function Home() {
               <span className="section-label">The SM Advantage</span>
               <h2 className="font-heading font-bold text-primary text-4xl md:text-6xl leading-[1.1]">
                 Knowledge is the root{" "}
-                <span className="text-primary/20">of all good</span>
+                <span className="text-primary/20">of all good in</span> <span className="text-red-400">Red</span>
               </h2>
             </div>
             <p className="max-w-sm text-lg text-on-surface-variant">

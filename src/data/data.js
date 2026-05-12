@@ -46,7 +46,7 @@ export const academicStreams = [
     subtitle: "NEET / EAPCET",
     description: "Intensive coaching tailored for securing merit seats in prestigious medical colleges.",
     features: ["NEET Intensive Coaching", "Weekly Exams & Mock Tests", "Overall personality development", "Result Oriented"],
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80",
+    image: "/bipc.jpeg",
     color: "from-teal-900 to-primary",
   },
   {
@@ -143,7 +143,7 @@ export const courses = [
       "Personal attention",
     ],
     icon: "🔬",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80",
+    image: "bipc.jpeg",
     color: "bg-primary-container",
     featured: true,
   },
