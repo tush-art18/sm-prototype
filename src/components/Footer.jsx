@@ -15,7 +15,7 @@ export default function Footer() {
             <Link to="/" className="flex flex-col items-center gap-4 md:flex-row group">
               <img src="/favicon.png" alt="SM Academy Logo" className="object-cover w-14 h-14 rounded-full transition-transform duration-300 md:w-14 md:h-14 group-hover:scale-110 bg-white p-1.5 shadow-xl border border-white/10" />
               <div className="flex flex-col items-center md:items-start">
-                <span className="text-xl font-black tracking-tight font-heading sm:text-2xl">SM Junior College <br className="hidden sm:block md:hidden" /> and Academy</span>
+                <span className="text-xl font-black tracking-tight font-heading sm:text-2xl">SM Junior College <br className="hidden sm:block md:hidden" />Coaching and Academy</span>
               </div>
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-white/60">
@@ -33,7 +33,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex items-center justify-center transition-all duration-300 border rounded-full w-10 h-10 border-white/20 text-white/60 hover:bg-gold hover:text-primary hover:border-gold hover:scale-110"
+                  className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-full border-white/20 text-white/60 hover:bg-gold hover:text-primary hover:border-gold hover:scale-110"
                 >
                   <Icon className="text-base" />
                 </a>

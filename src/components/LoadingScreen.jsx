@@ -140,7 +140,7 @@ export default function LoadingScreen({ onFinish, externalProgress = 0, readyToE
               margin: 0,
             }}
           >
-            &amp; Academy
+            &amp;Coaching and Academy
           </p>
         </div>
 

@@ -41,7 +41,7 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
             <div className="relative">
-              <img src="/sm-logo.png" alt="SM Academy Logo" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-cover rounded-full bg-white p-1 shadow-md transition-transform duration-300 group-hover:scale-105 border border-primary/5" />
+              <img src="/sm-logo.png" alt="SM Academy Logo" className="object-cover w-10 h-10 p-1 transition-transform duration-300 bg-white border rounded-full shadow-md sm:h-12 sm:w-12 md:h-14 md:w-14 group-hover:scale-105 border-primary/5" />
             </div>
             <div className="flex flex-col">
               <span
@@ -50,7 +50,7 @@ export default function Navbar() {
                 }`}
               >
                 SM Junior College <br />
-                <span className="text-[10px] sm:text-sm md:text-base font-bold tracking-widest opacity-80 uppercase">and Academy</span>
+                <span className="text-[10px] sm:text-sm md:text-base font-bold tracking-widest opacity-80 uppercase">Coaching and Academy</span>
               </span>
             </div>
           </Link>
@@ -161,7 +161,7 @@ export default function Navbar() {
               >
                 <img src="/sm-logo.png" alt="SM Academy Logo" className="h-16 w-16 object-cover rounded-full bg-primary p-1.5 shadow-xl border-2 border-gold" />
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl font-black text-primary font-heading tracking-tight">SM Junior College</span>
+                  <span className="text-2xl font-black tracking-tight text-primary font-heading">SM Junior College</span>
                   <span className="text-xs uppercase tracking-[0.2em] text-gold font-bold">and Academy</span>
                 </div>
               </Link>
