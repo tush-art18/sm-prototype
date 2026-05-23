@@ -1,6 +1,7 @@
 // src/pages/Faculty.jsx
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
+import SEO from "../components/SEO";
 import { faculty, principal } from "../data/data";
 import { HiAcademicCap, HiArrowRight } from "react-icons/hi";
 
@@ -35,6 +36,12 @@ function FacultyCard({ member, index }) {
 export default function Faculty() {
   return (
     <main className="pt-20">
+      <SEO
+        title="Our Faculty"
+        description="Meet the expert faculty at SM Junior College and Academy, Hyderabad. Senior educators with decades of experience coaching students for NEET, EAPCET, and Intermediate board exams."
+        keywords="SM Academy faculty, NEET coaching teachers Hyderabad, EAPCET faculty, best teachers junior college Hyderabad"
+        canonical="/faculty"
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <header className="relative py-24 overflow-hidden text-white bg-primary">
         <div
@@ -145,7 +152,7 @@ export default function Faculty() {
               for exceptional talent to join our academic family.
             </p>
             <a
-              href={`https://wa.me/919177890581?text=Hi!%20I'm%20a%20passionate%20educator%20and%20I'd%20like%20to%20inquire%20about%20career%20opportunities%20at%20SM%20Academy.`}
+              href={`https://wa.me/917093830167?text=Hi!%20I'm%20a%20passionate%20educator%20and%20I'd%20like%20to%20inquire%20about%20career%20opportunities%20at%20SM%20Academy.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-gold"

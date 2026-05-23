@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
+import SEO from "../components/SEO";
 import { useScrollAnimation, useCountUp } from "../hooks/useScrollAnimation";
 import {
   homeStats, coreValues, academicStreams,
@@ -12,6 +13,34 @@ import {
 import { HiX } from "react-icons/hi";
 import { HiArrowRight } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
+
+const homeStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "SM Junior College and Academy",
+  "url": "https://smjuniorcollegeandacademy.com",
+  "logo": "https://smjuniorcollegeandacademy.com/sm-logo.png",
+  "description": "SM Junior College and Academy – Hyderabad's premier institution offering BIPC-NEET, MPC-EAPCET, and CEC programs. Free admission for students with 90%+ in SSC.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4th & 5th FLOOR, LIGHT HOUSE, OPP BALSHETTY KHETH",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500024",
+    "addressCountry": "IN"
+  },
+  "telephone": "+917093830167",
+  "email": "smjr1272@gmail.com",
+  "sameAs": [
+    "https://www.instagram.com/smjrcollege"
+  ],
+  "foundingDate": "1984",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Saint Mesum Education Society"
+  }
+};
+
 
 // Stat counter card
 function StatCard({ value, label, index }) {
@@ -54,6 +83,13 @@ export default function Home() {
 
   return (
     <main>
+      <SEO
+        title="Home"
+        description="SM Junior College and Academy – Hyderabad's premier institution offering BIPC-NEET, MPC-EAPCET, and CEC programs. Free admission for merit students scoring 90%+ in SSC. Admissions open for 2026."
+        keywords="SM Junior College Hyderabad, SM Academy, BIPC NEET coaching Hyderabad, MPC EAPCET coaching, junior college admissions 2026, free admission merit students"
+        canonical="/"
+        structuredData={homeStructuredData}
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative flex items-center min-h-screen py-32 overflow-hidden">
         {/* Background */}
@@ -129,7 +165,7 @@ export default function Home() {
                   Explore Programs <HiArrowRight />
                 </Link>
                 <a
-                  href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+                  href={`https://wa.me/917093830167?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 btn-outline"
@@ -325,7 +361,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <a
-                    href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20apply%20for%20the%202026%20academic%20year.`}
+                    href={`https://wa.me/917093830167?text=Hi!%20I%20want%20to%20apply%20for%20the%202026%20academic%20year.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-center btn-gold whitespace-nowrap"
@@ -333,7 +369,7 @@ export default function Home() {
                     Apply Online
                   </a>
                   <a
-                    href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20schedule%20a%20visit%20to%20the%20SM%20Academy%20campus.`}
+                    href={`https://wa.me/917093830167?text=Hi!%20I'd%20like%20to%20schedule%20a%20visit%20to%20the%20SM%20Academy%20campus.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-10 py-4 text-sm font-bold tracking-wide text-white uppercase transition-all border rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm"
@@ -365,7 +401,7 @@ export default function Home() {
 
         {/* Button */}
         <a
-          href="https://wa.me/919177890581?text=Hello%20SM%20Academy%2C%20I%20am%20interested%20in%20getting%20information%20about%20admissions%20for%202026."
+          href="https://wa.me/917093830167?text=Hello%20SM%20Academy%2C%20I%20am%20interested%20in%20getting%20information%20about%20admissions%20for%202026."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with admissions on WhatsApp"

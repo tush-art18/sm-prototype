@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection";
+import SEO from "../components/SEO";
 import { courses } from "../data/data";
 import { HiArrowRight, HiCheckCircle } from "react-icons/hi";
 
@@ -13,12 +14,12 @@ function CourseCard({ course, index }) {
       className="h-full"
     >
       <div
-        className="group relative flex flex-col md:flex-row p-6 md:p-8 h-full bg-white border border-outline-variant rounded-[2rem] md:rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden"
+        className="group relative flex flex-col md:flex-row lg:flex-col p-6 md:p-8 h-full bg-white border border-outline-variant rounded-[2rem] md:rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer overflow-hidden"
       >
         {/* Decorative background shape */}
         <div className="absolute w-40 h-40 transition-transform duration-700 rounded-full pointer-events-none -top-8 -left-8 bg-surface-container-low group-hover:scale-150" />
 
-        <div className="relative z-10 flex flex-col flex-1 pr-0 mb-6 md:pr-6 md:mb-0">
+        <div className="relative z-10 flex flex-col flex-1 pr-0 mb-6 md:pr-6 md:mb-0 lg:pr-0 lg:mb-8">
           {/* Badge & Icon */}
           <div className="flex items-center gap-3 mb-6">
             <span className="text-3xl">{course.icon}</span>
@@ -49,7 +50,7 @@ function CourseCard({ course, index }) {
           </ul>
 
           <a
-            href={`https://wa.me/919177890581?text=Hi!%20I'd%20like%20to%20see%20the%20curriculum%20for%20the%20${course.title}%20program.`}
+            href={`https://wa.me/917093830167?text=Hi!%20I'd%20like%20to%20see%20the%20curriculum%20for%20the%20${course.title}%20program.`}
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-10 flex items-center gap-2 pb-1 mt-auto text-xs font-bold tracking-widest uppercase transition-all duration-300 border-b-2 text-primary group/btn hover:gap-4 border-primary w-fit"
@@ -60,8 +61,8 @@ function CourseCard({ course, index }) {
         </div>
 
         {/* Image side */}
-        <div className="relative flex flex-col justify-center w-full md:w-2/5 shrink-0">
-          <div className="w-full h-48 md:h-full md:min-h-[300px] rounded-2xl md:rounded-3xl overflow-hidden shadow-inner">
+        <div className="relative flex flex-col justify-center w-full md:w-2/5 lg:w-full shrink-0">
+          <div className="w-full h-56 md:h-full lg:h-auto lg:aspect-video md:min-h-[300px] lg:min-h-0 rounded-2xl md:rounded-3xl overflow-hidden shadow-inner">
             <img src={course.image} alt={course.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
           </div>
         </div>
@@ -73,6 +74,12 @@ function CourseCard({ course, index }) {
 export default function Courses() {
   return (
     <main className="pt-20">
+      <SEO
+        title="Academic Programs"
+        description="Explore BIPC (NEET/EAPCET), MPC (IIT/EAPCET), and CEC programs at SM Junior College and Academy in Hyderabad. Expert coaching, limited seats, and personal attention for every student."
+        keywords="BIPC NEET coaching Hyderabad, MPC EAPCET coaching, CEC junior college, SM Academy courses 2026, best junior college Hyderabad"
+        canonical="/courses"
+      />
       {/* ─── HERO HEADER ──────────────────────────────────── */}
       <section className="relative px-6 py-24 overflow-hidden bg-primary">
         <div
@@ -203,7 +210,7 @@ export default function Courses() {
               </p>
               <div className="flex flex-col justify-center gap-4 md:flex-row">
                 <a
-                  href={`https://wa.me/919177890581?text=Hi!%20I%20have%20some%20questions%20about%20the%20admissions%20process%20at%20SM%20Academy.`}
+                  href={`https://wa.me/917093830167?text=Hi!%20I%20have%20some%20questions%20about%20the%20admissions%20process%20at%20SM%20Academy.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center btn-outline"

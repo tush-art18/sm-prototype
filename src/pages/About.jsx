@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection";
+import SEO from "../components/SEO";
 import { useScrollAnimation, useCountUp } from "../hooks/useScrollAnimation";
 import { aboutStats, timeline, principal } from "../data/data";
 
@@ -28,6 +29,12 @@ function AboutStat({ value, label, index }) {
 export default function About() {
   return (
     <main className="pt-20">
+      <SEO
+        title="About Us"
+        description="Learn about SM Junior College and Academy – backed by 42 years of educational legacy from Saint Mesum Education Society, founded in 1984 in Hyderabad. Meet our Director and understand our vision."
+        keywords="about SM Junior College, Saint Mesum Education Society, Hyderabad junior college history, SM Academy legacy 1984"
+        canonical="/about"
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative px-6 overflow-hidden py-28 bg-primary">
         {/* Dot pattern */}

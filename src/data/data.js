@@ -260,7 +260,7 @@ export const faculty = [
 // Admissions page
 export const contactInfo = {
   address: "4th & 5th FLOOR, LIGHT HOUSE, OPP BALSHETTY KHETH, HYDERABAD - 500024",
-  phones: ["91778 90581", "70938 30167"],
+  phones: ["70938 30167"],
   email: "smjr1272@gmail.com",
   accreditation: "Saint Mesum Education Society",
 };

@@ -1,6 +1,7 @@
 // src/pages/Admissions.jsx
 import { motion } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
+import SEO from "../components/SEO";
 import { contactInfo, admissionFastTrack } from "../data/data";
 import {
   HiLocationMarker, HiPhone, HiMail,
@@ -29,6 +30,12 @@ export default function Admissions() {
 
   return (
     <main className="pt-20">
+      <SEO
+        title="Admissions 2026"
+        description="Apply now to SM Junior College and Academy for the 2026 academic year. Limited seats available for BIPC, MPC, and CEC streams. Free admission for SSC students scoring 90%+. Contact: 70938 30167."
+        keywords="SM Junior College admissions 2026, junior college Hyderabad apply, free admission 90 percent SSC, NEET coaching admission Hyderabad"
+        canonical="/admissions"
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-[70vh] flex items-center px-6 py-32 overflow-hidden">
         {/* Background Image & Overlay */}
@@ -87,7 +94,7 @@ export default function Admissions() {
             className="flex flex-wrap justify-center gap-4"
           >
             <a
-              href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20start%20my%20application%20for%20the%202026%20batch%20at%20SM%20Academy.`}
+              href={`https://wa.me/917093830167?text=Hi!%20I%20want%20to%20start%20my%20application%20for%20the%202026%20batch%20at%20SM%20Academy.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 btn-gold"
@@ -141,7 +148,7 @@ export default function Admissions() {
                   <div className="relative">
                     <div className="absolute inset-0 transition-opacity bg-gold blur-2xl opacity-20 group-hover:opacity-40" />
                     <a
-                      href={`https://wa.me/919177890581?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Merit%20Scholarship%20opportunities%20at%20SM%20Academy.`}
+                      href={`https://wa.me/917093830167?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20Merit%20Scholarship%20opportunities%20at%20SM%20Academy.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative inline-flex items-center gap-3 px-10 py-5 text-sm font-black tracking-wider uppercase transition-all rounded-full shadow-2xl bg-gold text-primary hover:bg-white hover:scale-105"

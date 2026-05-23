@@ -92,7 +92,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
 
             <a
-              href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+              href={`https://wa.me/917093830167?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:block px-6 py-2.5 text-sm font-bold tracking-wide text-primary transition-all duration-300 rounded-full bg-gold hover:scale-105 hover:shadow-xl hover:shadow-gold/30 active:scale-95"
@@ -211,7 +211,7 @@ export default function Navbar() {
                 Admissions open for 2026 Academic Year
               </p>
               <a
-                href={`https://wa.me/919177890581?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
+                href={`https://wa.me/917093830167?text=Hi!%20I'm%20interested%20in%20applying%20for%20the%202026%20academic%20year%20at%20SM%20Academy.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
