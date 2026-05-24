@@ -175,14 +175,14 @@ export default function Admissions() {
         <div className="grid gap-8 md:grid-cols-3">
           {steps.map((step, i) => (
             <AnimatedSection key={i} animation="fade-up" delay={i * 100}>
-              <div className="h-full p-6 sm:p-8 transition-all duration-300 bg-white border border-outline-variant rounded-[2rem] md:rounded-3xl hover:shadow-xl hover:-translate-y-2">
-                <div className="flex items-center justify-center w-16 h-16 mb-6 text-3xl rounded-2xl bg-primary-container text-primary">
+              <div className="h-full p-6 sm:p-8 transition-all duration-300 bg-primary border border-primary rounded-[2rem] md:rounded-3xl hover:shadow-xl hover:-translate-y-2">
+                <div className="flex items-center justify-center w-16 h-16 mb-6 text-3xl rounded-2xl bg-white/10 text-white border border-white/20">
                   {step.icon}
                 </div>
-                <h3 className="mb-3 text-xl font-bold font-heading text-primary">
+                <h3 className="mb-3 text-xl font-bold font-heading text-white">
                   {step.title}
                 </h3>
-                <p className="leading-relaxed text-on-surface-variant">
+                <p className="leading-relaxed text-white/70">
                   {step.desc}
                 </p>
               </div>
