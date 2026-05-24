@@ -228,7 +228,7 @@ export const faculty = [
   {
     name: "Mrs. SALEHA FATMIMA",
     role: "M.Sc, Zoology, B.Ed",
-    bio: "She has a proven track record of producing successful medical & academic professionals. She is among the MOST SORT-AFTER FACULTY at top corporate colleges.",
+    bio: "She has a proven track record of producing successful medical & academic professionals. She is among the MOST SOUGHT-AFTER FACULTY at top corporate colleges.",
     image: "/S-Fatima.png",
   },
   {

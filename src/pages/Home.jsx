@@ -138,7 +138,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-white font-heading font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-[1.05] drop-shadow-2xl"
             >
-              The Right Place,{" "}
+              The Right Place{" "}
               <br />
               <span className="text-gold">To Shape Your Future</span>
               <br />
@@ -195,8 +195,8 @@ export default function Home() {
             <div className="max-w-3xl">
               <span className="section-label">The SM Advantage</span>
               <h2 className="font-heading font-bold text-primary text-4xl md:text-6xl leading-[1.1]">
-                Knowledge is the root{" "}
-                <span className="text-red-500">of all good in</span>
+                Knowledge is potential{" "}
+                <span className="text-red-500">action is power</span>
               </h2>
             </div>
             <p className="max-w-sm text-lg text-on-surface-variant">
