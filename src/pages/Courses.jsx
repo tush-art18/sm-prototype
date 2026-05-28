@@ -1,4 +1,4 @@
-// src/pages/Courses.jsx
+1// src/pages/Courses.jsx
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection";
