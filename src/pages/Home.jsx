@@ -308,7 +308,7 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="bento-grid">
-            {bentoImages.map((item, i) => (
+            {bentoImages.map((item) => (
               <div
                 key={item.key}
                 className={`${item.key} group relative overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-xl`}
@@ -328,6 +328,17 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* View Full Gallery CTA */}
+          <div className="mt-12 text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold tracking-wide text-primary transition-all duration-300 rounded-full bg-gold hover:scale-105 hover:shadow-xl hover:shadow-gold/30 active:scale-95"
+            >
+              <span>View Full Campus & Events Gallery</span>
+              <HiArrowRight className="text-lg" />
+            </Link>
           </div>
         </div>
       </section>

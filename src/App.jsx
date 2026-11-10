@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
 import Faculty from "./pages/Faculty";
+import Gallery from "./pages/Gallery";
 import Admissions from "./pages/Admissions";
 
 // Scroll to top on route change
@@ -59,6 +60,7 @@ function AppLayout() {
             <Route path="/about" element={<About />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/faculty" element={<Faculty />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="*" element={<Home />} />
           </Routes>
